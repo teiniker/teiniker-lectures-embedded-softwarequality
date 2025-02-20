@@ -1,0 +1,21 @@
+Exercise: Static Analysis - Vector Operations
+-------------------------------------------------------------------------------
+
+The given implementation should be improved to satisfy Pylint (remove ALL 
+warnings).
+
+A) Static Code Analysis
+Use Pylint to analyze the given module "vector_operations_exercise.py".
+Run the tool from the command line.
+
+B) Refactoring
+Refactor the code to eliminate the Pylint warnings.
+Note that you can re-run the tool if you want to check your improvements.
+
+
+References:
+> YouTube: Loop like a native: while, for, iterators, generators
+    https://www.youtube.com/watch?v=EnSu9hHGq5o
+
+> Using the Python zip() Function for Parallel Iteration
+    https://realpython.com/python-zip-function/#looping-over-multiple-iterables    

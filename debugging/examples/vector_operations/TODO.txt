@@ -1,0 +1,20 @@
+Exercise: Debugging - Vector Operations
+-------------------------------------------------------------------------------
+
+Given the implementation of the following functions:
+
+def vector_add(v1, v2)
+def vector_sub(v1, v2)
+def vector_inverse(vector)
+def vector_scalar_product(v1, v2)
+
+Find the embedded bugs and fix them.
+
+A) Assert Statements
+Implement assert statements which verify the result of the given functions
+(Invoke the functions and verify the results).
+
+B) Debugging
+Use the interactive debugger to find the bugs, fix them and re-run the 
+verification part.
+

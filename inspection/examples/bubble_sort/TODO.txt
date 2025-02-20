@@ -1,0 +1,13 @@
+Exercise: Static Analysis - Bubble Sort
+-------------------------------------------------------------------------------
+
+The given implementation should be improved to satisfy Pylint (remove ALL 
+warnings).
+
+A) Static Code Analysis
+Use Pylint to analyze the given module "bubble_sort_exercise.py".
+Run the tool from the command line.
+
+B) Refactoring
+Refactor the code to eliminate the Pylint warnings.
+Note that you can re-run the tool if you want to check your improvements.

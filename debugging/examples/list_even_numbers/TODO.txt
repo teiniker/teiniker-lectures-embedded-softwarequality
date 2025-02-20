@@ -1,0 +1,18 @@
+Exercise: Debugging - List of Even Numbers
+-------------------------------------------------------------------------------
+
+Given the implementation of a simple algorithm which extracts the even numbers 
+from a list:
+
+def list_even_numbers(nums)
+
+Find the embedded bugs and fix them.
+
+A) Assert Statements
+Implement an assert statement which verify the result of the given function
+(Invoke the functions and verify the results).
+
+B) Debugging
+Use the interactive debugger to find the bugs, fix them and re-run the 
+verification part.
+
