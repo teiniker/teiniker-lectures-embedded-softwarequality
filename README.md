@@ -1,4 +1,4 @@
-# Embedded Softwarequality and Security
+# Embedded Software Quality and Security
 
 This repository collects examples, exercises and model solutions needed to understand
 the concepts of code inspection, software testing and software security in the 
