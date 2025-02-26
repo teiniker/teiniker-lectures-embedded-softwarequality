@@ -1,0 +1,13 @@
+{
+    "python.defaultInterpreterPath": "python3",
+    "python.terminal.executeInFileDir" : true,
+    "code-runner.executorMap": {
+        "python": "python3 -u",
+    },
+    "code-runner.fileDirectoryAsCwd": true,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.runInTerminal": true,
+    "pylint.args": [
+        "--disable=missing-module-docstring,missing-class-docstring,missing-function-docstring"
+    ]
+}
