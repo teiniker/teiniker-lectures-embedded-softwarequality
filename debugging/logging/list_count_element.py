@@ -1,6 +1,6 @@
 import logging
 
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s : %(message)s')
+logging.basicConfig(level=logging.WARNING, format='%(asctime)s %(levelname)s %(name)s : %(message)s')
 log = logging.getLogger(__name__)
 
 def list_count_element(nums:list, element:int) -> int:
