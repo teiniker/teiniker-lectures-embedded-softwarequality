@@ -1,10 +1,4 @@
-import logging
-
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s : %(message)s')
-log = logging.getLogger(__name__)
-
 def insertion_sort(arr):
-    log.debug(arr)
     # Traverse through 1 to len(arr)
     for i in range(1, len(arr)):
         key = arr[i]
@@ -23,5 +17,4 @@ def insertion_sort(arr):
 
 list_of_nums = [5, 2, 1, 8, 4]
 insertion_sort(list_of_nums)
-print(list_of_nums)
 assert list_of_nums == [1, 2, 4, 5, 8]

@@ -3,8 +3,15 @@ Exercise: Debugging - List Operations
 
 Given the implementation of the following functions:
 
-def list_multiple(k, l)
-def list_sum(l1, l2):
+def list_multiple(k, l): Multiply a constant with each element of a list.
+    k = 7
+    l = [5, 2, 1]
+    => [7*5, 7*2, 7*1]
+
+def list_sum(l1, l2): Add the corresponding elements of two lists.
+    l1 = [5, 2, 1]
+    l2 = [3, 7, 11]
+    => [5+3, 2+7, 1+11]
 
 Find the embedded bugs and fix them.
 

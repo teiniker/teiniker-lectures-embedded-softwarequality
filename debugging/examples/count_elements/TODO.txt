@@ -1,0 +1,12 @@
+Exercise: Debugging - Count List Elements 
+-------------------------------------------------------------------------------
+
+Debut the given code to count the number of elements in a list.
+
+A) Assert Statements
+Add assert statements to verify the outcome of the "list_count_element()" 
+function.
+
+B) Debugging
+Find the bug and fix it so that the assert statements pass.
+

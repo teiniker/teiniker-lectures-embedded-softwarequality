@@ -1,6 +1,3 @@
-# Debugging
-# A) Locate the bug by inserting log statements.
-# B) Fix the bug.
 
 def list_count_element(nums, element):
     counter = 0
