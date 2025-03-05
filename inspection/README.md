@@ -10,18 +10,17 @@ We use knowledge of the system, its application domain and the programming langu
 * **Software Metrics**
     * [Radon - Complexity Metrics](software-metrics/radon)
 
+* **Type Hints**
+    * [Mypy](static-analysis/type-hints)  
+
 * **Static Code Analysis**
     * [Introduction](static-analysis)
     * [Pylint](static-analysis/pylint)
     * [Prospector](static-analysis/prospector)
-
-* **Gradual Typing**
-    * [Mypy](static-analysis/type-hints)  
-
 
 ## References
 * [YouTube (Dave Farley): You Must Be Crazy To Do Pair Programming](https://youtu.be/t92iupKHo8M)
 
 * Ian Sommerville. **Software Engineering**. Pearson, Global Edition 2015
 
-*Egon Teiniker, 2020-2023, GPL v3.0*
+*Egon Teiniker, 2020-2025, GPL v3.0*
