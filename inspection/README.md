@@ -21,6 +21,9 @@ We use knowledge of the system, its application domain and the programming langu
 ## References
 * [YouTube (Dave Farley): You Must Be Crazy To Do Pair Programming](https://youtu.be/t92iupKHo8M)
 
+* [Refactoring Guru: Code Smells](https://refactoring.guru/refactoring/catalog)
+* [Refactoring Guru:Refactoring Techniques](https://refactoring.guru/refactoring/techniques)
+
 * Ian Sommerville. **Software Engineering**. Pearson, Global Edition 2015
 
 *Egon Teiniker, 2020-2025, GPL v3.0*
