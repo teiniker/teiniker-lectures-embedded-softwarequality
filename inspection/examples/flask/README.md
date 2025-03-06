@@ -31,6 +31,7 @@ src/flask/signals.py
 
 _Example:_ Cyclomatic Complexity Number (CCN)
 ```
+$ radon cc src/ -s
 src/flask/app.py
     M 1082:4 Flask.make_response - C (16)
     M 499:4 Flask.run - C (12)
