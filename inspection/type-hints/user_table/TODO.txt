@@ -1,0 +1,14 @@
+Exercise: Type Hints - User Table
+-------------------------------------------------------------------------------
+
+Given the classes "User" and "UserTable" which are related 
+in the following way:
+    [UserTable] ---[*]-> [User]
+ 
+A) Type Hints 
+    Add type hints to these classes "User" and "UserTable".
+
+B) Type Checks
+    Use mypy to validate the used types in the implementation:
+
+    $ mypy user_table.py

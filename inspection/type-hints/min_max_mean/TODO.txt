@@ -1,0 +1,16 @@
+Exercise: Type Hints - Min, Max, Mean Value
+-------------------------------------------------------------------------------
+
+Given the following functions:
+    min_value(lst): Calculate the minimum value of the given list.
+    max_value(lst): Calculate the maximum value of the given list.
+    mean_value(lst): Calculate the mean value of the given list.
+
+A) Type Hints 
+    Add type hints to these functions.
+
+B) Type Checks
+    Use mypy to validate the used types in the implementation:
+
+    $ mypy min_max_mean.py
+    
