@@ -16,15 +16,18 @@ class DataServiceTest(unittest.TestCase):
         # State verification
         expected = "0.8273,0.7822,0.9731,0.1239,0.9898"
         self.assertEqual(expected, values)
+
         # Behavioral verification
         dao.read_data.assert_called_once()
         self.assertEqual(1, dao.read_data.call_count)
+
 
     def test_data_access_error(self):
         # Setup
         dao = Mock()  # Mock() replaces DataAccessObject
         dao.read_data.side_effect = DataAccessError('Can not read data!')
         service = DataService(dao)
+
         # Exercise
         with self.assertRaises(ServiceError):
             service.csv_data()

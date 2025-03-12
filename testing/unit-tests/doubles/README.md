@@ -1,6 +1,6 @@
 # Test Doubles
 
-* [Introduction to Mock Objects](Introduction.md)
+* [Mock Object](mock-object/README.md)
 
 * **Demo Examples**
     * [mock_framework](mock_framework)
@@ -15,4 +15,4 @@
 * Gerard Meszaros. **xUnit Test Patterns**. Addison-Wesley, 2007
     * Chapter 11: Using Test Doubles
 
-*Egon Teiniker, 2020-2022, GPL v3.0*l
+*Egon Teiniker, 2020-2025, GPL v3.0*l

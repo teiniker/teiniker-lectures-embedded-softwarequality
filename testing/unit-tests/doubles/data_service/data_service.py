@@ -7,10 +7,10 @@ class DataAccessError(Exception):
 
 
 class DataService:
-    def __init__(self, dao):
+    def __init__(self, dao) -> None:
         self.dao = dao
 
-    def csv_data(self):
+    def csv_data(self) -> str:
         try:
             values = self.dao.read_data()
             csv = ','.join(str(value) for value in values)
