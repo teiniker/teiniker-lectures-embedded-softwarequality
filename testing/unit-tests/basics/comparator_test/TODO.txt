@@ -1,0 +1,5 @@
+Exercise: xUnit Basics - Comparator
+-------------------------------------------------------------------------------
+
+Implement all test cases to completely test the "compare()" function 
+(test all possible paths through the given function).

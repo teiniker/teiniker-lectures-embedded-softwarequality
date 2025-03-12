@@ -1,0 +1,13 @@
+Exercise: Result Verification and Custom Asserts - Order
+-------------------------------------------------------------------------------
+
+Implement the following custom assert methods which can be used to compare two 
+"Order" object trees attribute by attribute.
+
+A) assert_equal_product(self,expected,actual)
+
+B) assert_equal_order_line(self, expected, actual)
+
+C) assert_equals_order(self, expected, actual)
+
+

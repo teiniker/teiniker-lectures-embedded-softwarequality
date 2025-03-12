@@ -1,0 +1,29 @@
+Exercise: Time (xUnit Basics)
+-------------------------------------------------------------------------------
+
+For the given class "Time", implement the following test cases:
+
+A) test_constructor()
+    Create a "Time" object with valid values of hour, minutes, and seconds.
+    Verify if the constructor has set the values into the object fields.
+
+B) test_constructor_invalid_hours()
+    Create a "Time" object with an invalid values for "hours".
+    Verify the "ValueError" exception.
+
+C) test_constructor_invalid_minutes()
+    Create a "Time" object with an invalid values for "minutes".
+    Verify the "ValueError" exception.
+
+D) test_constructor_invalid_seconds()
+    Create a "Time" object with an invalid values for "seconds".
+    Verify the "ValueError" exception.
+
+E) test_repr()
+    Create a "Time" object and verify its "repr()" string.
+    Example: Time(12, 32, 21) => "Time(12, 32, 21)"
+
+F) test_str()
+    Create a "Time" object and verify its "str()" string.
+    Example: Time(12, 32, 21) => "12:32:21"
+

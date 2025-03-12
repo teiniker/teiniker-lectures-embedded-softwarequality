@@ -1,0 +1,27 @@
+Exercise: Mock Object + Code Coverage
+-------------------------------------------------------------------------------
+
+Given the implementation of the "Multimeter" class, implement all test cases
+needed to realize a code coverage of 100%.
+
+The "Multimeter" class uses another class which is referenced by the attribute 
+"device". Also a "DeviceError" exception can by thrown by the device object.
+
+You have to use a Mock object to substitute the "device" objects for your tests.  
+
+Put all tests in the file called "multimeter_test.py".
+
+
+How to run the test cases?
+--------------------------
+$ python3 -m unittest multimeter_test.py
+
+
+How to run the code coverage analysis?
+--------------------------------------
+$ coverage3 run -m unittest multimeter_test.py
+
+$ coverage3 report 
+
+$ coverage3 html
+=> Browser: htmlcov/index.html

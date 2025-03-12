@@ -1,0 +1,54 @@
+Exercise: Test Case Design based on Code Coverage - Input Validation
+-------------------------------------------------------------------------------
+
+To tests the "User" class stored in "user.py", implement as many test
+cases as needed to realize a code coverage of 100%.
+
+Put all tests in a file called "input_validation_test.py".
+
+
+How to run the test cases?
+--------------------------
+$ pwd
+input_validation
+
+$ python3 input_validation_test.py
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+OK
+
+
+How to run the code coverage analysis?
+--------------------------------------
+$ pwd
+input_validation
+
+$ coverage3 run input_validation_test.py
+
+$ coverage3 report 
+Name                       Stmts   Miss  Cover
+----------------------------------------------
+input_validation_test.py      22      1    95%
+user.py                       15      0   100%  <=
+----------------------------------------------
+TOTAL                         37      1    97%
+
+$ coverage3 html
+=> Browser: htmlcov/index.html
+
+
+References:
+-----------
+> Errors and Exceptions
+	https://docs.python.org/3/tutorial/errors.html
+
+> Python Custom Exceptions
+	https://www.programiz.com/python-programming/user-defined-exception
+
+> Python Exception Handling - Try, Except and Finally
+	https://www.programiz.com/python-programming/exception-handling
+
+> csv — CSV File Reading and Writing
+	https://docs.python.org/3/library/csv.html
+	
