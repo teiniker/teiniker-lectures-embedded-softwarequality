@@ -13,8 +13,12 @@ class ProductTest(unittest.TestCase):
         # Terdown
 
     def test_product_invalid_price(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError): # context manager
             Product('dvd', -1790)
+
+    # The block following with defines a context in which
+    # the test checks whether the specified exception
+    # (ValueError) is raised.
 
     def test_product_invalid_description(self):
         with self.assertRaises(ValueError):
