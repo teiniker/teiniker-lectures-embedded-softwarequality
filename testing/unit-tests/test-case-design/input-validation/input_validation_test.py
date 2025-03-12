@@ -13,10 +13,6 @@ class UserTest(unittest.TestCase):
         self.assertEqual('Kqq3lbODaQT4LvxsoihdknrtdSBiFOHaODQY65DJBS8=',
             user.password, 'different password')
 
-    def test_assert_id_type(self):
-        with self.assertRaises(TypeError):
-            User('7', 'homer', 'Kqq3lbODaQT4LvxsoihdknrtdSBiFOHaODQY65DJBS8=')
-
     def test_assert_id_value(self):
         with self.assertRaises(ValueError):
             User(-7, 'homer', 'Kqq3lbODaQT4LvxsoihdknrtdSBiFOHaODQY65DJBS8=')

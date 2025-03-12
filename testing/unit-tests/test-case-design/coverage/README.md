@@ -74,4 +74,4 @@ at the far right showing branch destination line numbers that were not exercised
 
 * [Coverage.py](https://coverage.readthedocs.io/en/6.3.2/)
 
-*Egon Teiniker, 2020-2022, GPL v3.0*
+*Egon Teiniker, 2020-2025, GPL v3.0*
