@@ -14,7 +14,7 @@ class MODE(Enum):
     RES = 5
 
 class Multimeter:
-    def __init__(self, device):
+    def __init__(self, device) -> None:
         self.device = device
         self.mode_dictionary = {
                 MODE.DCV: "dc_v",
@@ -24,10 +24,10 @@ class Multimeter:
                 MODE.RES: "res"
             }
 
-    def set_mode(self, mode):
+    def set_mode(self, mode: MODE) -> None:
         self.device.set_measurement_mode(self.mode_dictionary.get(mode))
 
-    def set_range(self, range_value):
+    def set_range(self, range_value: float) -> None:
         self.device.set_measurement_range(range_value)
 
     def measure(self)-> float:

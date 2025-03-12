@@ -11,9 +11,9 @@ class AnalysisServiceTest(unittest.TestCase):
         self.dao.read_data.return_value = [0.8273, 0.7822, 0.9731, 0.1239, 0.9898]
         self.service = DataAnalysisService(self.dao)    # SUT
 
-    def test_read_data(self):
-        list = self.dao.read_data()
-        print(list)
+    def test_read_data_from_dao(self):
+        data_list = self.dao.read_data()
+        print(data_list)
 
     def test_mean_value(self):
         # Exercise
