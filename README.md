@@ -17,6 +17,10 @@ The following topics will be covered:
     * [Introduction](inspection)
 
 3. **Software Testing**
+    * [Introduction](testing/README.md)
+    * [Unit Tests](testing/unit-tests/)
+    * [Acceptance Tests](testing/acceptance-tests/)
+
 
 4. **Software Security**
 
