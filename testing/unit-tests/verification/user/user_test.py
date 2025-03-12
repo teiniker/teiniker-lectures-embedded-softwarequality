@@ -24,7 +24,7 @@ class UserTest(unittest.TestCase):
 
     # Custom assert method
 
-    def assert_equal_user(self,expected,actual):
+    def assert_equal_user(self,expected:User,actual:User) -> None:
         self.assertEqual(expected.oid, actual.oid, 'different object id')
         self.assertEqual(expected.username, actual.username, 'different username')
         self.assertEqual(expected.password, actual.password, 'different password')

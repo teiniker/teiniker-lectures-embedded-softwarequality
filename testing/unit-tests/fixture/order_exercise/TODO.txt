@@ -1,8 +1,0 @@
-Exercise: Fixture Setup - Order 
--------------------------------------------------------------------------------
-
-Implement a custom creation method called "create_order()" which 
-sets up the [Order] --[*]-> [OrderLine] --[1]-> [Product] objects
-used in the given test case.  
-
-Make sure that the verification is working.

@@ -1,3 +1,4 @@
 .vscode/
 /**/.mypy*
+/**/__pycache__
 misc/
