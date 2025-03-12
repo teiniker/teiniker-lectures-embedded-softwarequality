@@ -196,8 +196,6 @@ First and second have the same elements in the same number, regardless of their 
         self.assertCountEqual(expected, self.list)
 ```
 
-    
-
-*Egon Teiniker, 2020-2022, GPL v3.0*
+*Egon Teiniker, 2020-2025, GPL v3.0*
 
  

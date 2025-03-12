@@ -1,6 +1,6 @@
 
 class Time():
-    def __init__(self, hours, minutes, seconds):
+    def __init__(self, hours:int, minutes:int, seconds:int) -> None:
         if hours < 0 or hours > 23:
             raise ValueError(f"Invalid hours value: '{hours}'!'")
         if minutes < 0 or minutes > 59:
@@ -13,11 +13,11 @@ class Time():
         self.seconds = seconds
 
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"Time({self.hours}, {self.minutes}, {self.seconds})"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.hours}:{self.minutes}:{self.seconds}"
 
-    def __eq__(self, other):
+    def __eq__(self, other) -> bool:
         return self.hours == other.hours and self.minutes == other.minutes and self.seconds == other.seconds

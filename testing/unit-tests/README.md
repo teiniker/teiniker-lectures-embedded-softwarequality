@@ -17,7 +17,13 @@ These patterns emphasize clarity, maintainability, and reliability in testing.
 
 Common xUnit test patterns include:
 
-* [Unit Test Basics](basics/)
+* [Unit Test Basics]
+    * [Introduction](basics/introduction/)
+    * Example: [list-test](basics/list-test/)
+    * Example: [product-test](basics/product-test/)
+    * Exercise: [comparator-test](basics/comparator-test/)
+    * Exercise: [resistor-test](basics/resistor-test/)
+    * Exercise: [time-test](basics/time-test/)
 
 * [Fixture Setup](fixture/)
 
