@@ -9,14 +9,15 @@ We use knowledge of the system, its application domain and the programming langu
 
 * **Software Metrics**
     * [Radon - Complexity Metrics](software-metrics/radon)
-
-* **Type Hints**
-    * [Mypy](static-analysis/type-hints)  
+    * [Cyclomatic Complexity](software-metrics/cyclomatic_complexity/)
 
 * **Static Code Analysis**
     * [Introduction](static-analysis)
+    * [Type Hints](static-analysis/type-hints)  
     * [Pylint](static-analysis/pylint)
     * [Prospector](static-analysis/prospector)
+    * [Flake8](static-analysis/flake8/)
+
 
 ## References
 * [YouTube (Dave Farley): You Must Be Crazy To Do Pair Programming](https://youtu.be/t92iupKHo8M)
