@@ -15,7 +15,26 @@ count = list_count_element(numbers, 1)
 print(f"Count of elements = {count}")
 ```
 
-That is what LLMs can find:
+Manual bugfix:
+
+```Python
+def list_count_element(nums:list, element:int) -> int:
+    counter = 0
+    for n in nums:
+        if n == element:
+            # Bug: count += count + 1
+            counter += 1
+    return counter
+
+# Setup
+numbers = [5, 2, 1, 8, 4, 3, 7, 1, 1, 4]
+# Exercise
+count = list_count_element(numbers, 1)
+# Verify
+assert count == 3
+```
+
+And that is what LLMs can find:
 
 * [ChatGPT 4.5](ChatGPT4.5.md)
 * [ChatGPT o3-mini-high](ChatGPT-o3-mini-high.md)
