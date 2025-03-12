@@ -33,5 +33,14 @@ of software.
 * [Test Case Design](test_case_design/)
 
 
+To integrate Unit tests into our regular development, we can use the concept of 
+**Test-Driven Development (TDD)** proposed by Kent Beck:
+
+* [Test-Driven Development](test-driven-development/)
+
+
+## References
+
+* [xUnit Test Patterns](http://xunitpatterns.com/index.html)
 
 *Egon Teiniker, 2020-2025, GPL v3.0*l
