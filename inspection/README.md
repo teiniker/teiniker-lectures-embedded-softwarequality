@@ -15,9 +15,9 @@ We use knowledge of the system, its application domain and the programming langu
     * [Introduction](static-analysis)
     * [Type Hints](static-analysis/type-hints) 
     * Rule-Based Analysis 
-        * [Pylint](static-analysis/pylint)
-        * [Prospector](static-analysis/prospector)
-        * [Flake8](static-analysis/flake8/)
+        * [Pylint](static-analysis/rule-based-analysis/pylint)
+        * [Prospector](static-analysis/rule-based-analysis/prospector)
+        * [Flake8](static-analysis/rule-based-analysis/flake8/)
     * [LLM-Based Analysis](static-analysis/llm-based-analysis/) 
 
 
