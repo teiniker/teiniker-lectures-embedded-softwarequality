@@ -1,4 +1,4 @@
-# Code Analysis Using llama3.3:70b
+# Code Analysis Using Local llama3.3:70b
 
 ## Prompt 
 

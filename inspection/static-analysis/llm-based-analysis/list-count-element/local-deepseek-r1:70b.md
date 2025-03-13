@@ -1,4 +1,4 @@
-# Code Analysis Using deepseek-r1:70b
+# Code Analysis Using Local deepseek-r1:70b
 
 ## Prompt 
 
