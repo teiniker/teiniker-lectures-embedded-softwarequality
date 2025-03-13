@@ -5,10 +5,10 @@ class UserTest(unittest.TestCase):
 
     def test_default_user(self):
         # setup
-        user = UserBuilder().build()
+        user = UserBuilder().oid(99).build()
 
         # Exercise + Verify
-        self.assertEqual(7, user.oid)
+        self.assertEqual(99, user.oid)
         self.assertEqual('homer', user.username)
         self.assertEqual('Kqq3lbODaQT4LvxsoihdknrtdSBiFOHaODQY65DJBS8=', user.password)
         self.assertEqual('homer.simpson@springfield.com', user.mail.adress)
