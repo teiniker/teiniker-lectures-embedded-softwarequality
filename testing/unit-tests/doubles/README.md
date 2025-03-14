@@ -3,7 +3,6 @@
 * [Mock Object](mock-object/README.md)
 
 * **Demo Examples**
-    * [mock_framework](mock_framework)
     * [data_service](data_service)
     * [data_analysis_patch](data_analysis_patch)
 
