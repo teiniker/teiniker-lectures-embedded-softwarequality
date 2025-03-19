@@ -15,7 +15,7 @@ class UserTableTest(unittest.TestCase):
         actual = self.table.find_by_id(3)
         # Verify
         expected = User(3,"Lisa","lKi8/hhgT")
-        self.assertEqual(expected, actual)
+        self.assertEqualUser(expected, actual)
 
     def test_find_all(self):
         # Exercise
