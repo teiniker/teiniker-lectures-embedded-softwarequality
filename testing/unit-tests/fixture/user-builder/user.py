@@ -8,4 +8,4 @@ class User:
         self.oid = oid
         self.username = username
         self.password = password
-        self.mail = mail
+        self.mail = mail  # ---[1]-> Mail
