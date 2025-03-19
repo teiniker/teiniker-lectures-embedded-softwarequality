@@ -6,8 +6,19 @@ class DataAccessError(Exception):
     pass
 
 
+class DataAccessObject:
+    def __init__(self) -> None:
+        self._data:list[float] = []
+
+    def read_data(self) -> list[float]:
+        return self._data
+
+    def save_data(self, data:list[float]) -> None:
+        self._data = data
+
+
 class DataService:
-    def __init__(self, dao) -> None:
+    def __init__(self, dao:DataAccessObject) -> None:
         self.dao = dao
 
     def csv_data(self) -> str:

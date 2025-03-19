@@ -42,6 +42,6 @@ An analysis can use different coverage metrics:
 
 * [Coverage.py](https://coverage.readthedocs.io/en/coverage-5.5/)
 
-*Egon Teiniker, 2020-2022, GPL v3.0*
+*Egon Teiniker, 2020-2025, GPL v3.0*
 
 
