@@ -1,0 +1,19 @@
+Exercise: Builder and Custom Assertions - User Table
+-------------------------------------------------------------------------------
+
+Given the classes "User" and "UserTable" als well as "UserTableTest".
+
+A) UserTableBuilder
+    Implement a "UserTableBuilder" class which can be used to create a "UserTable" 
+    instance together with "User" instances.
+    Example: UserTableBuilder()
+                .user(3,"Lisa","lKi8/hhgT")
+                .user(7,"Bart","kJ7&fRsd34%7")
+                .build()
+
+B) Custom Assertions
+    Implement a custom assertion method for the "User" class so that we 
+    can compare "User" objects in one line.
+    Example: self.assertEqualUser(expected, actual)
+
+    
