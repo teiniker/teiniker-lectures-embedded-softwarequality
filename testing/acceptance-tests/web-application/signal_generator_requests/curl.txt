@@ -1,0 +1,88 @@
+Curl Statements
+-------------------------------------------------------------------------------
+
+1) test_happy_path()
+
+$ curl -i -X POST localhost:8080/generator -H "Content-Type: application/x-www-form-urlencoded" -d 'amplitude=5&offset=-2.5&waveform=AC+%28square%29&action=Set'
+
+HTTP/1.1 200 
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-GB
+Transfer-Encoding: chunked
+Date: Tue, 13 Jun 2023 14:49:38 GMT
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Signal Generator Settings</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h2>
+        <p >Signal: AC (square) : 5 [V], -2.5 [V] offset.</p>
+    </h2>
+    <p/>
+    <a href="index.html"> back</a>
+</body>
+</html>
+
+Requests: Check for status = 200 and "Signal: AC (square) : 5 [V], -2.5 [V] offset"
+
+
+2) test_invalid_amplitude()
+
+$ curl -i -X POST localhost:8080/generator -H "Content-Type: application/x-www-form-urlencoded" -d 'amplitude=11&offset=2.5&waveform=AC+%28triangular%29&action=Set'
+
+HTTP/1.1 200 
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-GB
+Transfer-Encoding: chunked
+Date: Tue, 13 Jun 2023 14:46:46 GMT
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Signal Generator Settings</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h2>
+        <p >Invalid signal configuration:</p>
+    </h2>
+    <p >    amplitude = 11.0 [0.0,10.0]</p>
+    <p/>
+    <a href="index.html"> back</a>
+</body>
+</html>
+
+Requests: Check for status = 200 and "Invalid signal configuration"
+
+
+3) test_invalid_offset()
+
+$ curl -i -X POST localhost:8080/generator -H "Content-Type: application/x-www-form-urlencoded" -d 'amplitude=5&offset=-11&waveform=DC&action=Set'
+
+HTTP/1.1 200 
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-GB
+Transfer-Encoding: chunked
+Date: Tue, 13 Jun 2023 14:52:13 GMT
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Signal Generator Settings</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h2>
+        <p >Invalid signal configuration:</p>
+    </h2>
+    <p >    offset = -11.0 [-10.0,10.0]</p>
+    <p/>
+    <a href="index.html"> back</a>
+</body>
+</html>
+
+Requests: Check for status = 200 and "Invalid signal configuration"
+

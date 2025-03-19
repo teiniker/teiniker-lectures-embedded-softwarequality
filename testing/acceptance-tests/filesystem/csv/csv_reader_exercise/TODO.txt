@@ -1,0 +1,17 @@
+Exercise: Persistent Test Fixture - OS Module
+-------------------------------------------------------------------------------
+
+To tests the classes stored in "csv_reader.py", implement the missing "setUp()"
+and "tearDown()" methods:
+
+A) setUp()
+	Create a directoty "test_data" in the current working directory.
+	Copy the "data/data.csv" file into the new "test_data" folder and 
+	rename it to "order.csv"
+	Create an instance of "CsvDataReader"
+
+B) tearDown()
+	Remove the "order.csv" file and its "test_data" folder. 
+
+
+Put all code into the "csv_reader_test.py".

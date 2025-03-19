@@ -1,0 +1,10 @@
+Exercise: Boundary Value Analysis - Hex Numbers
+-------------------------------------------------------------------------------
+
+For a given function "operation()" which accepts hex numbers, test cases
+should be implemented. The range of hex numbers is defined by the following
+regular expression: '^[A-F0-9]{2,4}$'
+
+A) Design the minimum set of test cases (based on boundary value analysis)
+
+B) Implement the test cases in the "HexNumberTest" class.

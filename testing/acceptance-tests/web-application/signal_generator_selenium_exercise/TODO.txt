@@ -1,0 +1,64 @@
+Exercise: Web Application Testing - Signal Generator (Selenium)
+-------------------------------------------------------------------------------
+
+Given a web application to configure a signal generator.
+
+Run the web application:
+$ java -jar signal-generator.jar
+
+A) Manual Tests
+Use a browser to access the web application: http://localhost:8080
+To test the web application, use at least the following test cases:
+
+Amplitude: 5.0
+Offset:    -2.5
+Waveform:  AC (square)
+=> Signal: AC (square) : 5.0 [V], -2.5 [V] offset.
+
+Amplitude: 11.0
+Offset:    2.5
+Waveform:  AC (triangular)
+=> Invalid signal configuration:
+   amplitude = 11.0 [0.0,10.0]
+
+Amplitude: 5.0
+Offset:    -11.0
+Waveform:  DC
+=> Invalid signal configuration:
+   offset = -11.0 [-10.0,10.0]
+
+From these tests we have learned that the amplitute should be in the 
+range [0.0,10.0] volts and the offset in the range [-10.0,10.0] volts.
+
+B) Selenium IDE 
+Use Selenium IDE to record the three test sequences:
+- happy_path
+- invalid_amplitude 
+- invalid_offset
+Store these tests as "SignalGenerator.side" in your project.
+
+C) WebDriver Tests 
+Generate Python source code and refactor the code into a test class
+stored in "signal_generator_test.py":
+    SignalGeneratorTest(unittest.TestCase)
+        setUp()
+        tearDown()
+        test_happy_path()
+        test_invalid_amplitude()
+        test_invalid_offset()
+        
+D) Page-Object Tests 
+Implement the following page-objects in a file called "signal_generator_po_test.py":
+    SignalGeneratorPO 
+    + amplitude 
+    + offset 
+    + waveform (enum)
+    set() returns SettingsPO
+
+    SettingsPO
+    + message 
+    + back() returns SignalGeneratorPO
+
+In the same file, implement a test class called "SignalGeneratorPOTest" which 
+implements the three test cases using the page-objects.
+

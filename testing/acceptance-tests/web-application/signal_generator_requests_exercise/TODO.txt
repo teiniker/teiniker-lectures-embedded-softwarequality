@@ -1,0 +1,49 @@
+Exercise: Web Application Testing - Signal Generator (Requests Library)
+-------------------------------------------------------------------------------
+
+Given a web application to configure a signal generator.
+
+Run the web application:
+$ java -jar signal-generator.jar
+
+A) Manual Tests
+Use a browser to access the web application: http://localhost:8080
+To test the web application, use at least the following test cases:
+
+Amplitude: 5.0
+Offset:    -2.5
+Waveform:  AC (square)
+=> Signal: AC (square) : 5.0 [V], -2.5 [V] offset.
+
+Amplitude: 11.0
+Offset:    2.5
+Waveform:  AC (triangular)
+=> Invalid signal configuration:
+   amplitude = 11.0 [0.0,10.0]
+
+Amplitude: 5.0
+Offset:    -11.0
+Waveform:  DC
+=> Invalid signal configuration:
+   offset = -11.0 [-10.0,10.0]
+
+From these tests we have learned that the amplitute should be in the 
+range [0.0,10.0] volts and the offset in the range [-10.0,10.0] volts.
+
+B) Curl Statements
+Replace the manual tests with curl statements which can be executed from the 
+command line.
+
+$ TODO: curl statement 
+$ TODO: curl statement
+$ TODO: curl statement
+
+C) Requests Library 
+Write Python test cases which executes the curl statements via the "requests" 
+library.
+Implement the following methods in the "signal_generator_test.py" file :
+    SignalGeneratorTest(unittest.TestCase)
+        test_happy_path()
+        test_invalid_amplitude()
+        test_invalid_offset()
+        

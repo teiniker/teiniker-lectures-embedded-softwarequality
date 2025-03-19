@@ -1,0 +1,20 @@
+Exercise: Persistent Fixture Setup (JSON File)
+-------------------------------------------------------------------------------
+
+Given the test cases written in the "JsonDataTest" class, implement the missing 
+"setUp()" and "tearDown" methods:
+
+A) setUp()
+    Create a JSON file with the name "data.json" which contains the following data 
+    structure:
+        'person': {
+            'name': 'John', 
+            'age': 30, 
+            'city': 'Graz'
+        }
+
+B) tearDown()
+    Remove the file "data.json" from the filesystem.
+
+Tip: Use os.remove()
+

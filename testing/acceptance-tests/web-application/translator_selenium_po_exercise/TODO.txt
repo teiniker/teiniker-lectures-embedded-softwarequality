@@ -1,0 +1,21 @@
+Exercise: Selenium Tests Using the Page Object Pattern - Translator
+-------------------------------------------------------------------------------
+
+Given a web application called Translator, use Selenium IDE to generate 
+automated test cases.
+
+To start the web application, open a new terminal and type:
+$ cd translator 
+$ java -jar translator.jar
+
+A) Page Object Classes 
+Use the Selenium WebDriver tests implemented in "translator_selenium/translator_test.py"
+and write the following page object classes at the beginning of the 
+"translator_page_opject_test.py" file:
+
+    class Translator
+
+    class TranslatorResult
+
+Impement these classes so that all the given test methods are working.
+
