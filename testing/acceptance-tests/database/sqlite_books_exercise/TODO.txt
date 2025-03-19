@@ -1,0 +1,35 @@
+Exercise: Testing with Database - BookDAO
+-------------------------------------------------------------------------------
+
+Given an implementation of a Data Access Object named "BookDAO", implement the
+following test cases in the file "book_dao_test.py:
+
+A) Setup
+    Implement a two-step setup procedure:
+    First, setup the database table and enter some test data (once per class):
+        CREATE TABLE book (isbn TEXT PRIMARY KEY, title TEXT, authors TEXT, publisher TEXT, year INTEGER)
+        INSERT INTO book (isbn, title, authors, publisher, year) VALUES ('1449355730', 'Learning Python: Powerful Object-Oriented Programming', 'Mark Lutz', 'OReilly', 2013)
+        INSERT INTO book (isbn, title, authors, publisher, year) VALUES ('1593279280', 'Python Crash Course', 'Eric Matthes', 'No Starch Press', 2019)
+    Second, connect to the database and create in instance of the BookDAO class (for every test).
+
+B) Teardown
+    Implement a two-step teardown procedure:
+    First, drop the database table (once per class):
+        DROP TABLE book
+    Second, use the "rollback()" mechanism to undo all changes of a particular test.
+    Also close the connection.
+
+Tip: Store the SQL commands in files (setup.sql and teardown.sql), read nd execute them
+    against the database.
+
+C) test_insert()
+    Create a Book instance:
+        Book('1718501048', 'Effective C: An Introduction to Professional C Programming', 'Robert C. Seacord', 'No Starch Press', 2020)
+    Call the "insert()" operation of the DAO.
+    Verify the database table by using an SQL query: SELECT * FROM book WHERE isbn='1718501048'
+    Compare all columns with the expected values.
+
+D) test_find_by_isbn()
+    On the DAO, call the "find_by_isbn()" operation with the ISBN number '1593279280'.
+    Verify all attributes of the Book object with the expected values.
+

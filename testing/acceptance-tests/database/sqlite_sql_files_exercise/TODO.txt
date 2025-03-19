@@ -1,0 +1,25 @@
+Exercise: Integration Tests - Persistent Fixture (File, Database)
+-------------------------------------------------------------------------------
+
+Given the "LectureTest" class, implement a fixture setup and teardown.
+
+A) Setup 
+    Once per test class, load the SQL statements from the "sql/setup.sql" file
+    and execute them against the SQLIte database.
+
+    For every test method, use the implicit transaction begin() statement.
+
+B) Teardown 
+    Once per test class, load the SQL statements from the "sql/teardown.sql" file
+    and execute them against the SQLIte database.
+
+    For every test method, use the transacion rollback() operation.
+
+Tip: Use the cursor.executescript(sql) operation which takes an SQL string as argument.
+
+C) Testcase: test_delete(self) 
+    Implement a test case which executes the following SQL statement:
+        DELETE FROM lectures WHERE id IN (1,3)
+    Verify that only 3 rows left, with the IDs: 2, 4, 5
+
+    Tip: Use "SELECT id FROM lectures"

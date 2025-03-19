@@ -1,0 +1,37 @@
+Exercise: Persistent Fixture Setup, Testing with Databases
+-------------------------------------------------------------------------------
+
+Implement a test class "LectureTest" for a database table called "lectures".
+
+A) Use a two step fixture setup (Shared Fixture):
+	i) Setup the database schema (and drop the schema) once per class.
+       CREATE TABLE lectures (
+ 	        id INTEGER,
+ 	        title TEXT NOT NULL,
+ 	        ects INTEGER NOT NULL,
+ 	        sws INTEGER NOT NULL,
+ 	        PRIMARY KEY(id)
+       )
+       INSERT INTO lectures (id,title,ects,sws) VALUES (1, 'Mathematical Methods in Test Engineering', 6, 4)
+       INSERT INTO lectures (id,title,ects,sws) VALUES (2, 'Software Environments and Programming', 6, 4)
+       INSERT INTO lectures (id,title,ects,sws) VALUES (3, 'Digital Electronics', 6, 4)
+       INSERT INTO lectures (id,title,ects,sws) VALUES (4, 'Mixed-Signal Electronics', 6, 4)
+       INSERT INTO lectures (id,title,ects,sws) VALUES (5, 'System Requirements and Testing', 6, 4)
+      
+	   DROP TABLE lectures
+
+	ii) Use database transactions (begin and rollback) to implement the per test
+        setup and teardown.
+
+B) Implement test cases for the following SQL statements:
+   i) SELECT id,title,sws FROM lectures ORDER BY title
+       Verify the whole result set (you can directly compare tuples)
+
+   ii) SELECT id,title,sws,ects FROM lectures WHERE title like '%Test%'
+       Verify the whole result set (you can directly compare tuples)
+
+   iii) DELETE FROM lectures WHERE id IN (1,3)
+       To check the result, only read the ids from the remaining rows
+       and verify them.
+
+Put all the code into the "lectures_test.py" file.
