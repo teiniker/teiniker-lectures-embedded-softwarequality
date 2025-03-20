@@ -37,7 +37,7 @@ with databases for several reasons:
 * Exercise: [sqlite_lectures](sqlite_lectures_exercise) - ([Model Solution](sqlite_lectures))
 * Exercise: [sqlite_in_memory](sqlite_in_memory_exercise) - ([Model Solution](sqlite_in_memory))
 * Exercise: [sqlite_sql_files](sqlite_sql_files_exercise/) - ([Model Solution](sqlite_sql_files/))
-
+* Exercise: [sqlite_books](sqlite_books_exercise/) - ([Model Solution](sqlite_books/))
 
 ## References
 * Gerard Meszaros. **xUnit Test Patterns**. Addison-Wesley, 2007
