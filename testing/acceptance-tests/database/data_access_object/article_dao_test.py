@@ -4,7 +4,7 @@ import sqlite3
 from article_dao import Article, ArticleDao
 
 class SQLiteTest(unittest.TestCase):
-    DATABASE_NAME = 'testdb.db'
+    DATABASE_NAME = 'test.db'
 
     # Shared test fixture (database schema and test data)
     @classmethod

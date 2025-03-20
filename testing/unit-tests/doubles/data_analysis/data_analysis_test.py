@@ -8,14 +8,16 @@ class AnalysisServiceTest(unittest.TestCase):
 
     def setUp(self):
         self.dao = Mock()                               # DOC
-        self.dao.read_data.return_value = [0.8273, 0.7822, 0.9731, 0.1239, 0.9898]
         self.service = DataAnalysisService(self.dao)    # SUT
 
     def test_read_data_from_dao(self):
+        self.dao.read_data.return_value = [0.8273, 0.7822, 0.9731, 0.1239, 0.9898]
         data_list = self.dao.read_data()
         print(data_list)
 
     def test_mean_value(self):
+        # Setup 
+        self.dao.read_data.return_value = [0.8273, 0.7822, 0.9731, 0.1239, 0.9898]
         # Exercise
         mean = self.service.mean_value()
         # Verify
@@ -23,6 +25,8 @@ class AnalysisServiceTest(unittest.TestCase):
         self.assertEqual(expected, mean, 1E-3)
 
     def test_max_value(self):
+        # Setup
+        self.dao.read_data.return_value = [0.8273, 0.7822, 0.9731, 0.1239, 0.9898]
         # Exercise
         maximum = self.service.max_value()
         # Verify

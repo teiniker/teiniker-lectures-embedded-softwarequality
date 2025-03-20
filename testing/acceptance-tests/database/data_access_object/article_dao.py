@@ -2,7 +2,7 @@ class DataAccessError(Exception):
     pass
 
 
-class Article:
+class Article:  # Entity Class
     """Entity class: a data object which can be stored in the database."""
 
     def __init__(self, oid, description, price):
