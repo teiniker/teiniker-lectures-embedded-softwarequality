@@ -51,7 +51,7 @@ class ArticleDao:
         except Warning as ex:
             raise DataAccessError("Can't remove Article with id: " + oid) from ex
 
-    def find_by_id(self, oid):
+    def find_by_id(self, oid) -> Article:
         """Find an Article by its id."""
         sql = "SELECT * FROM article WHERE id=?"
         parameters = (oid,)
@@ -64,7 +64,7 @@ class ArticleDao:
         except Warning as ex:
             raise DataAccessError("Can't find Article with given id: " + oid) from ex
 
-    def find_all(self):
+    def find_all(self) -> list[Article]:
         sql = "SELECT * FROM article"
         try:
             cur = self.conn.cursor()

@@ -22,7 +22,7 @@ class FreshFixtureTest(unittest.TestCase):
         self.conn.close()
 
     def test_select_all_users(self):
-        self.cur.execute('SELECT* from user')
+        self.cur.execute('SELECT * from user')
         table = self.cur.fetchall()
         # Verify
         self.assertEqual(5, len(table))
