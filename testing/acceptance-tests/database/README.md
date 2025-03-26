@@ -28,6 +28,22 @@ with databases for several reasons:
     - Performance degradation may cause developers to skip tests, run fewer tests, 
         or rely excessively on mocks and stubs, reducing test accuracy.
 
+In testing involving databases, fixtures represent the setup required to put the 
+system into a known state before running tests.
+
+* **Fresh Fixture**: Every test method gets its own fresh database setup.
+    Each test runs independently, isolated from changes made by other tests.
+    - Tests do not interfere with each other.
+    - Highly reliable and repeatable tests.
+    - Simple troubleshooting, as each test is independent.
+    - Can be slow due to repeated setup/teardown operations.
+
+* **Shared Fixture**: One database fixture is created and shared across multiple 
+    tests. Test methods run on the same database state; changes made by one test 
+    can impact others.
+    - More efficient, faster execution due to less setup overhead.
+    - Tests can interfere with each other (interdependent).
+    - Requires careful management of the database state to avoid flaky tests.
 
 
 ## Examples and Exercises   
