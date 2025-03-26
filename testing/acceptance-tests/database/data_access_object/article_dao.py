@@ -1,3 +1,5 @@
+import sqlite3
+
 class DataAccessError(Exception):
     pass
 
@@ -5,25 +7,28 @@ class DataAccessError(Exception):
 class Article:  # Entity Class
     """Entity class: a data object which can be stored in the database."""
 
-    def __init__(self, oid, description, price):
+    def __init__(self, oid:int, description:str, price:int) -> None:
         self.oid = oid
         self.description = description
         self.price = price
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"Article: [id = {self.oid}, description={self.description}, price={self.price}]"
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return str(self)
+
+    def __eq__(self, value) -> bool:
+        return self.oid == value.oid # only compare oid
 
 
 class ArticleDao:
     """Data Access Object: A class used to store Article objects in the database."""
 
-    def __init__(self, dbc):
+    def __init__(self, dbc: sqlite3.Connection) -> None:
         self.conn = dbc
 
-    def insert(self, article):
+    def insert(self, article: Article) -> None:
         """Insert a new Article into the database."""
         sql = "INSERT INTO article (id, description, price) VALUES (?,?,?)"
         parameters = (article.oid, article.description, article.price)
@@ -31,27 +36,27 @@ class ArticleDao:
             cur = self.conn.cursor()
             cur.execute(sql, parameters)
         except Warning as ex:
-            raise DataAccessError("Can't insert Article: " + article) from ex
+            raise DataAccessError("Can't insert Article: " + str(article)) from ex
 
-    def update(self, article):
+    def update(self, article: Article) -> None:
         sql = "UPDATE article SET description=?, price=? WHERE id=?"
         parameters = (article.description, article.price, article.oid)
         try:
             cur = self.conn.cursor()
             cur.execute(sql, parameters)
         except Warning as ex:
-            raise DataAccessError("Can't update Article: " + article) from ex
+            raise DataAccessError("Can't update Article: " + str(article)) from ex
 
-    def delete(self, oid):
+    def delete(self, oid:int) -> None:
         sql = "DELETE FROM article WHERE id=?"
         parameters = (oid,)
         try:
             cur = self.conn.cursor()
             cur.execute(sql, parameters)
         except Warning as ex:
-            raise DataAccessError("Can't remove Article with id: " + oid) from ex
+            raise DataAccessError("Can't remove Article with id: " + str(oid)) from ex
 
-    def find_by_id(self, oid) -> Article:
+    def find_by_id(self, oid:int) -> Article:
         """Find an Article by its id."""
         sql = "SELECT * FROM article WHERE id=?"
         parameters = (oid,)
