@@ -32,8 +32,11 @@ class SharedFixtureTest(unittest.TestCase):
     def setUp(self):
         self.conn = sqlite3.connect(SharedFixtureTest.DATABASE_NAME)
         self.cur = self.conn.cursor()
-        # begin()  start a database transaction
-        
+        # BEGIN
+        # SQLite starts a transaction automatically when you execute
+        # the first SQL statement that modifies the database, such
+        # as INSERT, UPDATE, DELETE, etc.
+
     def tearDown(self):
         self.conn.rollback()
         self.conn.close()

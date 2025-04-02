@@ -17,6 +17,7 @@ class SQLiteMemoryTest(unittest.TestCase):
 
     def tearDown(self):
         self.conn.close()
+        # During close(), the in-memory database will be destroyed.
 
     def test_select_all_users(self):
         self.cur.execute('SELECT* from user')
