@@ -12,3 +12,6 @@ INSERT INTO book (isbn, title, authors, publisher, year)
 INSERT INTO book (isbn, title, authors, publisher, year)
     VALUES ('1593279280', 'Python Crash Course', 'Eric Matthes', 'No Starch Press', 2019);
 
+-- BEGIN TRANSACTION;
+-- test_method()
+-- ROLLBACK;

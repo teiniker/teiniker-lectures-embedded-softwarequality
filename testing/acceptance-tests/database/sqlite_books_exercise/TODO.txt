@@ -19,8 +19,8 @@ B) Teardown
     Second, use the "rollback()" mechanism to undo all changes of a particular test.
     Also close the connection.
 
-Tip: Store the SQL commands in files (setup.sql and teardown.sql), read nd execute them
-    against the database.
+Tip: Store the SQL commands in files (setup.sql and teardown.sql), read and execute them
+    against the database using "cursor.executescript(sql)".
 
 C) test_insert()
     Create a Book instance:

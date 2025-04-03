@@ -1,3 +1,4 @@
+import os
 import unittest
 import sqlite3
 
@@ -5,6 +6,7 @@ from book_dao import Book, BookDao
 
 def execute_sql_script(filename:str, db_name:str) -> None:
     """Execute a SQL script from a file and commit the changes to the database."""
+    print(os.getcwd())
     with open(filename,'r', encoding="utf-8") as sql_file:
         conn = sqlite3.connect(db_name)
         sql = sql_file.read()
@@ -28,7 +30,7 @@ class SQLiteTest(unittest.TestCase):
 
     def setUp(self):
         self.conn = sqlite3.connect(SQLiteTest.DATABASE_NAME)
-        self.cur = self.conn.cursor()
+        
         self.dao = BookDao(self.conn)
         # begin()  start a database transaction
 
@@ -41,8 +43,9 @@ class SQLiteTest(unittest.TestCase):
         book = Book('1718501048', 'Effective C: An Introduction to Professional C Programming', 'Robert C. Seacord', 'No Starch Press', 2020)
         self.dao.insert(book)
         # Verify
-        self.cur.execute("SELECT * FROM book WHERE isbn='1718501048'")
-        row = self.cur.fetchone()
+        cur = self.conn.cursor()
+        cur.execute("SELECT * FROM book WHERE isbn='1718501048'")
+        row = cur.fetchone()
         self.assertEqual('1718501048', row[0])
         self.assertEqual('Effective C: An Introduction to Professional C Programming', row[1])
         self.assertEqual('Robert C. Seacord', row[2])
