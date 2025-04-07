@@ -1,0 +1,51 @@
+Exercise: File Encryption (Asymmetric Encryption) 
+-------------------------------------------------------------------------------
+
+In this example, we simulate a client and a server which encrypt and decrypt
+data stored in a file.
+
+A) Client (file_encryptor.py) 
+  Uses the public key to encrypt data and store the data in a file called "secure.data"
+  
+  Implement a class called "FileEncryptor" which provides the following methods:
+    def __init__(self, public_key)->None:
+    The constructor takes the public_key and stores it in the object.
+
+    def encrypt(self, plaintext:bytes)->bytes:
+    The encrypt() method takes the public_key, encrypts the plaintext and 
+    returns the ciphertext.
+
+    def save(self, filename:str, data:bytes)->None:
+    The save() method takes a bytes object, encrypts it and save the ciphertext in 
+    a file of the given name.
+
+   Use the "FileEncryptorTest" class to test your implementation.
+
+
+B) Server (file_decryptor.py)
+    Uses the private key to decrypt data which have been stored in a file called 
+    "secure.data".
+
+    Implement a class called "FileDecryptor" which provides the following methods:
+    def __init__(self, private_key)->None:
+    The constructor takes the private_key and stores it in the object.
+
+    def decrypt(self, ciphertext:bytes)->bytes:
+    The decrypt() method takes the private_key, decrypts the ciphertext and 
+    returns the plaintext.  
+
+    def load(self, filename:str)->bytes:
+    The load() method reads the encrypted file "secure.data", decrypts it  
+    and returns the plaintext.
+
+    Use the "FileDecryptorTest" class to test your implementation.
+
+
+
+How to create private and public key using OpenSSL?
+---------------------------------------------------
+
+$ openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:4096 -out openssl-private-key.pem
+
+$ openssl pkey -in openssl-private-key.pem -out openssl-public-key.pem -pubout
+

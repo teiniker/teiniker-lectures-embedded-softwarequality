@@ -1,0 +1,18 @@
+Exercise: File Encrypter (Symmetric Encryption) 
+-------------------------------------------------------------------------------
+
+Implement a class called "FileEncrypter" with the following operations:
+
+A) __init__(self, key:bytes, iv:bytes)->None
+   A constructor that takes a secret key and an initialization vector (iv) to setup
+   an AES cipher in CTR mode.
+
+B) save(self, filename:str, data:bytearray)->None
+   Encrypt the given data with the AES cipher.
+   Store the ciphertext in a binary file with the given "filename".
+
+C) load(self, filename:str)->bytes
+   Load the content of a binary file with the given "filename".
+   Decrypt the loaded bytes with the AES cipher and return the plaintext data.
+
+Verify your implementations with the FileEncryptorTest class.

@@ -1,0 +1,17 @@
+Exercise: Fingerprint (Message Digest) 
+-------------------------------------------------------------------------------
+
+Implement a class called "Fingerprint" with the following methods:
+
+A) from_bytes(self, data)
+   Calculate a SHA-256 hash value from a given binary array "data"
+
+B) from_string(self, text)
+   Calculate a SHA-256 hash value from a given string "text"
+
+C) from_file(self, filename)
+   Calculate a SHA-256 hash value from a given file with the name
+   "filename" read from the filesystem.
+   
+   Compare your fingerprint with the output of the command line tool:
+       $ sha256sum tux.jpeg

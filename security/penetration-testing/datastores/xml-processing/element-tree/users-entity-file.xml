@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>
+
+<users>
+    <user id="666">
+        <username>mephisto</username>
+        <password>&xxe;</password>
+    </user>
+    <user id="1">
+        <username>homer</username>
+        <password>duffbeer</password>
+    </user>    
+
+    <user id="2">
+        <username>marge</username>
+        <password>sweethome</password>
+    </user>    
+</users>

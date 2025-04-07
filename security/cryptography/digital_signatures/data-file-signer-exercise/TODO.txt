@@ -1,0 +1,50 @@
+Exercise: Digital Signatures
+-------------------------------------------------------------------------------
+
+Implement a data signer and verifier class wich can be used to check the 
+integrity of measurement data files.
+
+
+A) Generate a pair of private and public keys 
+    $ openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:4096 -out openssl-private-key.pem
+        => openssl-private-key.pem
+    $ openssl pkey -in openssl-private-key.pem -out openssl-public-key.pem -pubout
+        => openssl-public-key.pem
+
+
+B) Data file signer 
+    Implement the following operations of the "DataFileSigner" class:
+    
+    def  __init__(self, private_key)->None:
+        Store the private_key within the object.
+
+    def save_signature(self, filename:str, signature)->None:
+        Take the signate as a bytes object and store it in a binary file with the 
+        given filename and the extension ".signature".
+
+    def sign_data_file(self, filename:str)->None:
+        Load the measurement file with the given filename and the extension ".data"
+        from the local directory.
+        Calculate the digital signature for that data and use the "save_signature()" 
+        method to save the signature in a file.   
+
+    Use the "SignatureTest" class to check your implementations.
+
+
+C) Data file verifier 
+    Implement the following operations of the "DataFileVerifier" class:
+
+    def __init__(self, public_key)->None:
+        Store the public_key within the object.
+
+    def load_signature(self, filename:str):
+        Load the signature from the binary file with the given filename and the 
+        extension ".signature".
+        Return the signature as a bytes object.
+
+    def verify_data_file(self, filename:str)->None:
+        Load the measurement data with the given filename and the extension ".data".
+        Load the signature with the given filename and the extension ".signature".
+        Verify the signature with the loaded measurement data.    
+        (If there is no InvalidSignature exception, the signatue is valid)
+

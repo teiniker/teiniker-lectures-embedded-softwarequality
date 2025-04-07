@@ -1,0 +1,20 @@
+Exercise: Password Storage with Salt (Message Digest)
+-------------------------------------------------------------------------------
+
+You should implement a class called "PasswordEncryption" which encrypts
+and verifies passwords. A SHA-256 hash algorithm together with a 16 bytes
+random salt should be used.
+
+The class should provide (at least) the following methods:
+1. encrypt(self, plaintext_password)
+    A random salt (16 bytes) should be generated.
+    Salt and password (as bytes) should be concatenated and hashed
+    Salt and hashed password should be concatenated and returned as bytes
+
+2. verify(self, plaintext_password, encrypted_password)
+    Extract the salt (16 bytes) from the given encrypted_password
+    Use the salt and the plaintext_password to encrypt the password
+    Compare the encrypted password with the given encrypted_password
+
+Tips:
+- You can concatenate byte arrays using the + operator

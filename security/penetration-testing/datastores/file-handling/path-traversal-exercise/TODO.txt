@@ -1,0 +1,13 @@
+Exercise: Path Traversal Mitigation
+-------------------------------------------------------------------------------
+
+Given the implementation of a "FileManager" class that allows users to read 
+files.
+
+We have to implement a mitigation strategy to prevent path traversal attacks.
+
+A) Input Validation
+Validate the "ǹame" parameter to ensure that it does not contain any
+characters that could be used to traverse the file system. 
+
+Tip: Use regular expressions to validate the input.

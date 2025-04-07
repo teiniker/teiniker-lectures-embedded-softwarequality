@@ -1,0 +1,20 @@
+Exercise: API Security - TLS, Basic Authentication, Test Client
+-------------------------------------------------------------------------------
+
+Given a working REST service (see README.md to run and test the service via curl).
+
+Improve the Security of the REST service:
+
+A) Add TLS support
+Configure the service to handle only requests send via HTTPS.
+
+B) Add HTTP Basic Authentication 
+Extend the service to force clients to authenticate themselfs.
+Use the following credentials:
+    bart / eatmyshorts
+    homer / duffbeer
+Also, change the curl statements so that you can test the service again.
+
+C) Test Client using requests library 
+Implement a test class named "BookServiceTest" which uses the "requests" 
+library to run the curl tests in an automated way.

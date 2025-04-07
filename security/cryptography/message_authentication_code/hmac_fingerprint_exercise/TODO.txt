@@ -1,0 +1,16 @@
+Exercise: Fingerprint (Message Authentication Code) 
+-------------------------------------------------------------------------------
+
+Implement a class called "Fingerprint" which takes a key string (32 bytes hex) 
+in the constructor and provides the following methods:
+
+A) from_bytes(self, data:bytes)->str
+   Calculate a HMAC based on (SHA-256) from a given binary array "data"
+
+B) from_string(self, text:str)->str
+   Calculate a HMAC based on (SHA-256) from a given string "text"
+
+C) from_file(self, filename:str)->str
+   Calculate a HMAC based on (SHA-256) from a given file with the name
+   "filename" read from the filesystem.
+   Read the file as a binary 'rb'.
