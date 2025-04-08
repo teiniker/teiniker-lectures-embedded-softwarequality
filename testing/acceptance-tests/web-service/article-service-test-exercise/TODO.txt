@@ -1,7 +1,7 @@
 Exercise: Web Service Tests (requests Library)
 -------------------------------------------------------------------------------
 
-Given the "flask-article-service":
+Given the "article-service":
 
 ```
 $ python3 article_service.py
