@@ -40,11 +40,11 @@ Selenium WebDriver refers to both the language bindings and the implementations 
 controlling code. This is commonly referred to as just WebDriver.
 
 **Install Web Driver**:
-* Download the binary package [geckodriver-v0.34.0-linux64.tar.gz](https://github.com/mozilla/geckodriver/releases)
+* Download the binary package [geckodriver-v0.36.0-linux64.tar.gz](https://github.com/mozilla/geckodriver/releases)
 * Unzip the tar file and store the binary in a local directory:
     ```
     $ cd Downloads
-    $ tar xvzf geckodriver-v0.34.0-linux64.tar.gz
+    $ tar xvzf geckodriver-v0.36.0-linux64.tar.gz
     $ mkdir ~/local/webdriver
     $ mv geckodriver ~/local/webdriver/
     ```
