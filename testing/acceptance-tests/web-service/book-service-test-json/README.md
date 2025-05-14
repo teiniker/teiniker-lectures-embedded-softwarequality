@@ -4,7 +4,7 @@ From a given `response` object we can parse the JSON data using `response.json()
 The `json()` method parses the JSON response into a **Python dictionary**.
 
 _Example:_ JSON content of a REST response
-```JSON
+```
 {'data':
     [
         {'author': 'Eric Matthes', 'id': 1, 'isbn': '978-1718502703', 'title': 'Python Crash Course'},
