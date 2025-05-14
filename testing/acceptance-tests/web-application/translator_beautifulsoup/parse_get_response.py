@@ -77,10 +77,10 @@ class TestTranslatorFormHTML(unittest.TestCase):
     def test_language_select_options(self):
         select = self.soup.find('select', {'name': 'language'})
         self.assertIsNotNone(select)
-        options = [option.text.strip() for option in select.find_all('option')]
+        options = [option.text for option in select.find_all('option')]
         print(options)
-        #self.assertIn('Deutsch', options)
-        self.assertIn('Francais', options)
+        self.assertTrue('Deutsch' in options[0])
+        self.assertTrue('Francais' in options[1])
     
     def test_action_buttons(self):
         inputs = self.soup.find_all('input', {'name': 'action'})
