@@ -8,6 +8,11 @@ class BookServiceTest(unittest.TestCase):
         self.assertEqual(200, response.status_code)
         self.assertEqual('application/json', response.headers['content-type'])
         json_data = response.json()
+        # Verify the JSON response
+        self.assertEqual(1, json_data['id'])
+        self.assertEqual('Eric Matthes', json_data['author'])
+        self.assertEqual('978-1718502703', json_data['isbn'])
+        self.assertEqual('Python Crash Course', json_data['title'])
 
     def test_find_all(self):
         response = requests.get('http://localhost:8080/books', timeout=5)
@@ -15,12 +20,10 @@ class BookServiceTest(unittest.TestCase):
         self.assertEqual('application/json', response.headers['content-type'])
         json_data = response.json()
         print(json_data)
-
-        # Extract and print all the 'id' fields
+        # Verify all the 'id' fields
         ids = []
         for book in json_data['data']:
             ids.append(book['id'])
-
         self.assertEqual(1, ids[0])
         self.assertEqual(2, ids[1])
         self.assertEqual(3, ids[2])
