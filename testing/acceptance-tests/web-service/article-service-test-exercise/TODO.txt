@@ -14,7 +14,7 @@ test_find_all():
 $ curl -i http://localhost:8080/articles
 
 test_find_by_id():
-$ curl -i http://localhost:8080/articles/1
+$ curl -i http://localhost:8080/articles/3
 
 test_insert():
 $ curl -i -X POST localhost:8080/articles -H "Content-Type: application/json" -d '{"id":7, "description":"Learning Python", "price":5448}'
@@ -22,9 +22,12 @@ $ curl -i -X POST localhost:8080/articles -H "Content-Type: application/json" -d
 test_update():
 $ curl -i -X PUT localhost:8080/articles/2 -H "Content-Type: application/json" -d '{"description":"Clean Code in Python", "price":3700}'
 
-test_delete():
-$ curl -i -X DELETE http://localhost:8080/articles/1
 
-Check the returned status codes with asserts and print the response text 
-to the console window.
+A) For all tests check the returned status codes and content types 
+    with assert statements.
 
+B) In "test_find_by_id()" use the JSON module to verify "id", "description", 
+    and "price" of the returned article. 
+
+C) In "test_find_all()" validate if the ids 1,2,3 are present in the 
+    returned list of articles.
