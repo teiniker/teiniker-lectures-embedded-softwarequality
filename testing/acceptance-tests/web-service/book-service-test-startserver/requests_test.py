@@ -1,18 +1,32 @@
 import unittest
 import time
+import socket
 import multiprocessing
 import requests
+
 from book_service import app
 
 def run_app():
     app.run(port=8080, debug=False, use_reloader=False)
+
+def wait_for_server(host, port, timeout=5.0):
+    start_time = time.time()
+    while time.time() - start_time < timeout:
+        try:
+            with socket.create_connection((host, port), timeout=1):
+                return True
+        except (ConnectionRefusedError, OSError):
+            time.sleep(0.1)
+    raise RuntimeError(f"Server at {host}:{port} did not start in time.")
+
 
 class BookServiceTest(unittest.TestCase):
 
     def setUp(self):
         self.server = multiprocessing.Process(target=run_app)
         self.server.start()
-        time.sleep(1)  # Give the server time to start
+        # time.sleep(1)  # Give the server time to start
+        wait_for_server('localhost', 8080)
 
     def tearDown(self):
         self.server.terminate()
