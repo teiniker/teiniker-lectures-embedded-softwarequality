@@ -8,8 +8,6 @@ The following areas of penetration testing will be covered in the context of **e
 
 * **API Security Basics**
 
-  * [HTTP/S Protocol](api-security/http-protocol)
-
   * [API Best Practices](api-security/api-bestpractices/)
 
   * Access Control
