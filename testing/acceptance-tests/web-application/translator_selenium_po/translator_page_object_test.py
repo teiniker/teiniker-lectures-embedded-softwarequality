@@ -8,7 +8,7 @@ class Language(Enum):
     FRANCAIS = 2
 
 class TranslatorPO:
-    def __init__(self, driver):
+    def __init__(self, driver) -> None:
         self.driver = driver
         self.driver.get('http://localhost:8080/index.html')
         # Here we can configure default values

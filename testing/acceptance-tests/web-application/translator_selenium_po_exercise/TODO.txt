@@ -13,9 +13,9 @@ Use the Selenium WebDriver tests implemented in "translator_selenium/translator_
 and write the following page object classes at the beginning of the 
 "translator_page_opject_test.py" file:
 
-    class Translator
+    class TranslatorPO
 
-    class TranslatorResult
+    class TranslatorResultPO
 
 Impement these classes so that all the given test methods are working.
 

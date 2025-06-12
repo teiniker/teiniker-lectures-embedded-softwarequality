@@ -17,7 +17,7 @@ class TranslatorResult:
 class SeleniumTest(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
-        self.translator = Translator(self.driver)
+        self.translator = TranslatorPO(self.driver)
 
     def tearDown(self):
         self.driver.quit()
