@@ -4,8 +4,8 @@ Exercise: File Encrypter (Symmetric Encryption)
 Implement a class called "FileEncrypter" with the following operations:
 
 A) __init__(self, key:bytes, iv:bytes)->None
-   A constructor that takes a secret key and an initialization vector (iv) to setup
-   an AES cipher in CTR mode.
+   A constructor that takes a secret key and an initialization vector (iv) 
+   to setup an AES cipher in CTR mode.
 
 B) save(self, filename:str, data:bytearray)->None
    Encrypt the given data with the AES cipher.
