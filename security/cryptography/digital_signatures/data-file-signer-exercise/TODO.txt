@@ -18,7 +18,7 @@ B) Data file signer
     def  __init__(self, private_key)->None:
         Store the private_key within the object.
 
-    def save_signature(self, filename:str, signature)->None:
+    def save_signature(self, filename:str, signature:bytes)->None:
         Take the signate as a bytes object and store it in a binary file with the 
         given filename and the extension ".signature".
 
@@ -37,7 +37,7 @@ C) Data file verifier
     def __init__(self, public_key)->None:
         Store the public_key within the object.
 
-    def load_signature(self, filename:str):
+    def load_signature(self, filename:str)->bytes:
         Load the signature from the binary file with the given filename and the 
         extension ".signature".
         Return the signature as a bytes object.

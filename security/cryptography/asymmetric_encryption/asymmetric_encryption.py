@@ -16,25 +16,17 @@ class AsymmetricEncryptionTest(unittest.TestCase):
         print('Message   : ' + message.hex())
 
         # encrypt a message
-        ciphertext = self.public_key.encrypt(
-            message,
-            padding.OAEP(
-                mgf=padding.MGF1(algorithm=hashes.SHA256()),
-                algorithm=hashes.SHA256(),
-                label=None
-            )
-        )
+        oaep_padding = padding.OAEP(mgf=padding.MGF1(algorithm=hashes.SHA256()), algorithm=hashes.SHA256(), label=None)
+        ciphertext = self.public_key.encrypt(message, oaep_padding)
         print('Ciphertext: ' + ciphertext.hex())
 
         # decrypt a message
-        plaintext = self.private_key.decrypt(
-            ciphertext,
-            padding.OAEP(
-                mgf=padding.MGF1(algorithm=hashes.SHA256()),
-                algorithm=hashes.SHA256(),
-                label=None
-            )
+        oaep_padding = padding.OAEP(
+            mgf=padding.MGF1(algorithm=hashes.SHA256()),
+            algorithm=hashes.SHA256(),
+            label=None
         )
+        plaintext = self.private_key.decrypt(ciphertext, oaep_padding)
         print('Plaintext : ' + plaintext.hex())
         print('Plaintext : ' + plaintext.decode('utf-8'))
 

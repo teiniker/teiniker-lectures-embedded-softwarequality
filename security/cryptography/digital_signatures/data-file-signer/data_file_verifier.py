@@ -10,7 +10,7 @@ class DataFileVerifier:
     def __init__(self, public_key)->None:
         self.public_key = public_key
 
-    def load_signature(self, filename:str):
+    def load_signature(self, filename:str)->bytes:
         with open(filename + '.signature', 'rb') as f:
             signature = f.read()
             return signature
@@ -31,7 +31,8 @@ class DataFileVerifier:
                 ),
                 hashes.SHA256()
             )
-            # If the signature does not match, verify() will raise an InvalidSignature exception.
+            # If the signature does not match, 
+            # verify() will raise an InvalidSignature exception.
 
 
 class VerifierTest(unittest.TestCase):

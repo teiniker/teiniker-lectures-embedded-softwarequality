@@ -22,30 +22,28 @@ class SignatureTest(unittest.TestCase):
         print('Message   : ' + message.decode('utf-8'))
 
         # singn a message
-        signature = self.private_key.sign(
-            message,
-            padding.PSS(
-                padding.MGF1(
-                    hashes.SHA256()),
-                    salt_length = padding.PSS.MAX_LENGTH
-                ),
-                hashes.SHA256()
-            )
+        pss_padding = padding.PSS(
+            mgf=padding.MGF1(hashes.SHA256()),
+            salt_length=padding.PSS.MAX_LENGTH
+        )
+        signature = self.private_key.sign(message, pss_padding, hashes.SHA256())
         # Probabilistic Signature Scheme (PSS) is a padding scheme designed
         # by Mihir Bellare and Phillip Rogaway.
         print('Signature: ' + signature.hex())
 
         # verify a message
+        verify_pss_padding = padding.PSS(
+            mgf=padding.MGF1(hashes.SHA256()),
+            salt_length=padding.PSS.MAX_LENGTH
+        )
         self.public_key.verify(
             signature,
             message,
-            padding.PSS(
-                mgf = padding.MGF1(hashes.SHA256()),
-                salt_length = padding.PSS.MAX_LENGTH
-            ),
+            verify_pss_padding,
             hashes.SHA256()
         )
-        # If the signature does not match, verify() will raise an InvalidSignature exception.
+        # If the signature does not match, verify() will raise an 
+        # InvalidSignature exception.
 
 if __name__ == '__main__':
     unittest.main()

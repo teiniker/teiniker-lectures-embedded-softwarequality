@@ -19,7 +19,7 @@ class FileEncryptorTest(unittest.TestCase):
 
     def test_save_bytes(self):
         data = b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f'
-        hash = self.encrypter.save('secure.data', data)
+        self.encrypter.save('secure.data', data)
 
 
 if __name__ == '__main__':

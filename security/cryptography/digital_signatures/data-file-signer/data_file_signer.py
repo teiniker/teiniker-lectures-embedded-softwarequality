@@ -9,7 +9,7 @@ class DataFileSigner:
     def __init__(self, private_key)->None:
         self.private_key = private_key
 
-    def save_signature(self, filename:str, signature)->None:
+    def save_signature(self, filename:str, signature:bytes)->None:
         with open(filename + '.signature', 'wb') as f:
             f.write(signature)
 

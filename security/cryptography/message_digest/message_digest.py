@@ -3,6 +3,13 @@ import hashlib
 
 class MessageDigestTest(unittest.TestCase):
 
+    def test_sha1(self):
+        b = bytes("message", 'utf-8')
+        digest = hashlib.sha1(b)
+        hash = digest.hexdigest()
+        self.assertEquals("6f9b9af3cd6e8b8a73c2cdced37fe9f59226e27d", hash)
+
+
     def test_sha256(self):
         b = bytes("message", 'utf-8')
         digest = hashlib.sha256(b)

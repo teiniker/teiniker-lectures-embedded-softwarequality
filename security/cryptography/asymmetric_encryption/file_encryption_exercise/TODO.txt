@@ -4,7 +4,12 @@ Exercise: File Encryption (Asymmetric Encryption)
 In this example, we simulate a client and a server which encrypt and decrypt
 data stored in a file.
 
-A) Client (file_encryptor.py) 
+A) Create private and public key using OpenSSL
+$ openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:4096 -out openssl-private-key.pem
+$ openssl pkey -in openssl-private-key.pem -out openssl-public-key.pem -pubout
+
+
+B) Client (file_encryptor.py) 
   Uses the public key to encrypt data and store the data in a file called "secure.data"
   
   Implement a class called "FileEncryptor" which provides the following methods:
@@ -22,7 +27,7 @@ A) Client (file_encryptor.py)
    Use the "FileEncryptorTest" class to test your implementation.
 
 
-B) Server (file_decryptor.py)
+C) Server (file_decryptor.py)
     Uses the private key to decrypt data which have been stored in a file called 
     "secure.data".
 
@@ -39,13 +44,3 @@ B) Server (file_decryptor.py)
     and returns the plaintext.
 
     Use the "FileDecryptorTest" class to test your implementation.
-
-
-
-How to create private and public key using OpenSSL?
----------------------------------------------------
-
-$ openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:4096 -out openssl-private-key.pem
-
-$ openssl pkey -in openssl-private-key.pem -out openssl-public-key.pem -pubout
-
