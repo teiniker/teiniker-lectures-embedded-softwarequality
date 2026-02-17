@@ -11,7 +11,6 @@ The following topics will be covered:
 1. **Introduction**
     * [Programming Languages for Embedded Systems](introduction/ProgrammingLanguages.md)
     * [Python Programming](https://github.com/teiniker/teiniker-lectures-python)
-    * [Debugging](debugging)
 
 2. **Software Inspection**
     * [Introduction](inspection)
