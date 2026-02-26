@@ -7,17 +7,19 @@ Generally, inspections focus on **source code**, but any readable representation
 
 We use knowledge of the system, its application domain and the programming language or design model to discover errors.
 
-* **Software Metrics**
-    * [Radon - Complexity Metrics](software-metrics/radon)
-    * [Cyclomatic Complexity](software-metrics/cyclomatic_complexity/)
+* Software Metrics
+    * [Radon](software-metrics/radon)
+    * Examples: [Radon Measurement](software-metrics/radon-examples/)
 
-* **Static Code Analysis**
+* Static Code Analysis
     * [Introduction](static-analysis)
     * [Type Hints](static-analysis/type-hints) 
+
     * Rule-Based Analysis 
         * [Pylint](static-analysis/rule-based-analysis/pylint)
         * [Prospector](static-analysis/rule-based-analysis/prospector)
         * [Flake8](static-analysis/rule-based-analysis/flake8/)
+    
     * [LLM-Based Analysis](static-analysis/llm-based-analysis/) 
 
 
@@ -29,4 +31,4 @@ We use knowledge of the system, its application domain and the programming langu
 
 * Ian Sommerville. **Software Engineering**. Pearson, Global Edition 2015
 
-*Egon Teiniker, 2020-2025, GPL v3.0*
+*Egon Teiniker, 2020-2026, GPL v3.0*
