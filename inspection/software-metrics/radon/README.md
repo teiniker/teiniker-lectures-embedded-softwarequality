@@ -1,12 +1,14 @@
 # Radon - Complexity Metrics
 
-The following metrics are measured using [Radon](https://pypi.org/project/radon/), a Python metrics tool.
+The following metrics are measured using 
+[Radon](https://pypi.org/project/radon/), a Python metrics tool.
+
 
 ## Setup
 
 With a single `pip` command, we can install Radon:
-```
-$ pip3 install radon
+```bash
+$ pip install radon
 
 $ radon --help
     usage: radon [-h] [-v] {cc,raw,mi,hal} ...
@@ -24,8 +26,8 @@ $ radon --help
 ```
 
 ## Lines of Code (LOC)
-```
-Usage: $ radon raw <path1> <path2>
+```bash
+$ radon raw <path1> <path2>
 ```
 
 This command analyzes the given Python modules in order to compute raw metrics. These include:
@@ -50,8 +52,8 @@ The following options can be used:
 
 ## Cyclomatic Complexity Number (CCN)
 
-```
-Usage: $ radon cc <path> -s
+```bash
+$ radon cc <path> -s
 ```
 
 This command analyzes Python source files and compute Cyclomatic Complexity.
@@ -91,19 +93,25 @@ The following options can be used:
 * `-O`, `--output-file`\
    **Save output** to the specified output file.
 
+
 ## Other Metrics
 
-* **Halstead Metrics** Halstead’s goal was to identify measurable properties of software, and the relations between them. 
-   These numbers are statically computed from the source code: 
+* **Halstead Metrics** Halstead’s goal was to identify measurable properties 
+    of software, and the relations between them. 
+    
+    These numbers are statically computed from the source code: 
     * η1 = the number of distinct operators
     * η2 = the number of distinct operands
     * N1 = the total number of operators
     * N2 = the total number of operands
    From these numbers several measures can be calculated.
 
-* **Maintainability Index** Maintainability Index is a software metric which measures how maintainable (easy to support and change) the source code is. 
-  The maintainability index is calculated as a factored formula consisting of SLOC (Source Lines Of Code), Cyclomatic Complexity and Halstead volume. 
-  It is used in several automated software metric tools which uses a shifted scale (0 to 100) derivative.
+* **Maintainability Index** Maintainability Index is a software metric which 
+    measures how maintainable (easy to support and change) the source code is. 
+  The maintainability index is calculated as a factored formula consisting of 
+  SLOC (Source Lines Of Code), Cyclomatic Complexity and Halstead volume. 
+  It is used in several automated software metric tools which uses a shifted 
+  scale (0 to 100) derivative.
 
 
 ## References
@@ -111,4 +119,4 @@ The following options can be used:
 
 * [Introduction to Code Metrics](https://radon.readthedocs.io/en/latest/intro.html)
 
-*Egon Teiniker, 2020-2025, GPL v3.0*
+*Egon Teiniker, 2020-2026, GPL v3.0*
