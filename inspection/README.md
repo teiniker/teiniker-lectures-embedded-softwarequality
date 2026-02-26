@@ -1,17 +1,13 @@
 # Software Inspection 
 
-Software inspection is a **static technique** in which a software system is reviewed to find errors and anomalies.
+Software inspection is a **static technique** in which a software system 
+is reviewed to **find errors and anomalies**.
 
-Generally, inspections focus on **source code**, but any readable representation of the software such as its 
-**requirements** or a **design model** can be inspected.
-
-We use knowledge of the system, its application domain and the programming language or design model to discover errors.
-
-* Software Metrics
+* **Software Metrics**
     * [Radon](software-metrics/radon)
     * Examples: [Radon Measurement](software-metrics/radon-examples/)
 
-* Static Code Analysis
+* **Static Code Analysis**
     * [Introduction](static-analysis)
     * [Type Hints](static-analysis/type-hints) 
 
