@@ -61,6 +61,51 @@ simple_caesar.py:12:12: C0103: Constant name "encoded" doesn't conform to UPPER_
 Your code has been rated at 6.84/10 (previous run: 9.47/10, -2.63)
 ```
 
+### Configure Rule Set 
+
+With Pylint, the rule set is controlled mainly through a configuration 
+file where you enable, disable, or tune specific checks (“messages”).
+
+First we create a base configuration file:
+
+```bash
+$ pylint --generate-rcfile > .pylintrc
+```
+This produces a `.pylintrc` file containing all available settings and 
+rules. We can then modify it.
+
+Pylint will automatically detect `.pylintrc` in the project directory.
+
+_Example:_ This disables some rules by symbolic names
+
+```ini
+[MESSAGES CONTROL]
+disable=
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring
+```
+
+_Example:_ This disables some rules by message ID
+
+```ini
+[MESSAGES CONTROL]
+disable=C0114, C0115, C0116
+```
+
+_Example:_ Override rules directly in the command
+
+```bash
+$ pylint mymodule.py --disable=missing-docstring
+```
+
+_Example:_ List all Pylint rules
+
+```bash
+$ pylint --list-msgs
+```
+
+
 ## References 
 * [Youtube (Real Python): Pylint Tutorial – How to Write Clean Python](https://youtu.be/fFY5103p5-c)
 

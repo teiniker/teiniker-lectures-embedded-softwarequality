@@ -2,3 +2,6 @@
 /**/.mypy*
 /**/__pycache__
 misc/
+.mypy_cache/
+.pytest_cache/
+.venv/
