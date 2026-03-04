@@ -1,9 +1,9 @@
 
 class User():
     def __init__(self, oid:int, username:str, password:str) -> None:
-        self.oid:int = oid
-        self.username:str = username
-        self.password:str = password
+        self.oid = oid
+        self.username = username
+        self.password = password
 
     def __str__(self) -> str:
         return f"User: id={self.oid}, username='{self.username}'"

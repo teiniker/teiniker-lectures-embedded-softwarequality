@@ -1,8 +1,5 @@
 
 class Resistor():
-    _value:int
-    _tolerance:int
-
     def __init__(self, value:int, tolerance:int) -> None:
         self.value = value
         self.tolerance = tolerance
@@ -27,12 +24,14 @@ class Resistor():
     @tolerance.setter
     def tolerance(self, tolerance:int) -> None:
         print(f'set tolerance: {tolerance}')
+        if tolerance < 0:
+            raise ValueError('Invalid tolerance of the resistor!')
         self._tolerance = tolerance
 
 
-# Verify implementation
-
-r1 = Resistor(100,1)
-r1.value = 470
-assert 470 == r1.value
-assert 1 == r1.tolerance
+if __name__ == '__main__':
+    # Verify implementation
+    r1 = Resistor(100,1)
+    r1.value = 470
+    assert 470 == r1.value
+    assert 1 == r1.tolerance
