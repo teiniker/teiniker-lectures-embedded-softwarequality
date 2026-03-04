@@ -53,7 +53,7 @@ The following options can be used:
 ## Cyclomatic Complexity Number (CCN)
 
 ```bash
-$ radon cc <path> -s
+$ radon cc -s <path> 
 ```
 
 This command analyzes Python source files and compute Cyclomatic Complexity.
