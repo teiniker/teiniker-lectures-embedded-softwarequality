@@ -9,7 +9,10 @@ is reviewed to **find errors and anomalies**.
 
 * Type Hints    
     - [Introduction](type-hints/introduction/README.md) 
-    
+    - Example: [mypy-demo](type-hints/mypy-demo/)
+    - Example: [resistor](type-hints/resistor/)
+    - Exercise: [min_max_mean](type-hints/min_max_mean/)
+    - Exercise: [user_table](type-hints/user_table/)
 
 * Static Code Analysis
     * [Introduction](static-analysis)
