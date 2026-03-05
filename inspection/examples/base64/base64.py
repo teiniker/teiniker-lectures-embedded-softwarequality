@@ -36,7 +36,7 @@ def base64encode(msg):
 
 
 def base64decode(msg):
-    """Decode a base64 strint back to a message."""
+    """Decode a base64 string back to a message."""
     i = 0
     decoded = ''
     base64chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
@@ -66,12 +66,12 @@ def base64decode(msg):
     return decoded
 
 
-# Verification
+if __name__ == '__main__':
+    # Verify
+    encoded_msg = base64encode('Hello Eggenberg!')
+    print(encoded_msg)
+    assert 'SGVsbG8gRWdnZW5iZXJnIU==' == encoded_msg
 
-encoded_msg = base64encode('Hello Eggenberg!')
-print(encoded_msg)
-assert 'SGVsbG8gRWdnZW5iZXJnIU==' == encoded_msg
-
-decoded_msg =base64decode('SGVsbG8gRWdnZW5iZXJnIU==')
-print(decoded_msg)
-assert 'Hello Eggenberg!' == decoded_msg
+    decoded_msg = base64decode('SGVsbG8gRWdnZW5iZXJnIU==')
+    print(decoded_msg)
+    assert 'Hello Eggenberg!' == decoded_msg
