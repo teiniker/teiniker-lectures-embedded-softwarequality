@@ -35,6 +35,43 @@ $ ruff check path/to/code/*.py
 $ ruff check path/to/code/to/file.py  
 ```
 
+## Fixing Problems 
+
+The **--fix** flag in Ruff tells Ruff to automatically modify your code to resolve 
+lint violations that are safe to fix programmatically.
+
+_Example:_ 
+
+First we run the linter:
+
+```bash 
+$ ruff check . 
+...
+Found 14 errors.
+[*] 10 fixable with the `--fix` option
+```
+
+Now, we can tell Ruff to fix simple problems automatically:
+```bash 
+$ ruff check . --fix
+...
+Found 12 errors (8 fixed, 4 remaining).
+
+$ ruff check . 
+...
+Found 4 errors.
+```
+
+Keep in mind that Ruff can only auto-fix a subset of issues.  
+It applies safe, straightforward fixes directly to your source files.
+
+Before committing, always review what changed:
+* `git status` to see which files were modified
+* `git diff` to inspect the exact edits
+
+This helps you confirm the fixes and avoid unintended changes.
+
+
 ## Using Ruff as a Formatter 
 
 `Ruff` can also automatically reformat Python files.  
@@ -130,6 +167,8 @@ Without becoming overly strict.
 ## References
 
 * [Python Tutorial: Ruff - A Fast Linter & Formatter to Replace Multiple Tools and Improve Code Quality](https://youtu.be/828S-DMQog8?si=AUPB1v8hTclNX2k7)
+
+* [Ruff Rules](https://docs.astral.sh/ruff/rules/)
 
 * [GitHub: Ruff](https://github.com/astral-sh/ruff)
 
