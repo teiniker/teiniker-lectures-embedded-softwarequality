@@ -1,9 +1,9 @@
 """
-This module conatins an implementation of the insertion sort algorithm
+This module contains an implementation of the insertion sort algorithm.
 """
 
 def insertion_sort(data):
-    """ Implementation of the assertion sort algorithm."""
+    """Implementation of the insertion sort algorithm."""
     for j in range(1, len(data)):
         key = data[j]
         i = j - 1
@@ -13,9 +13,9 @@ def insertion_sort(data):
         data[i+1] = key
 
 
-# Verification
-
-measure_data = [2,7,3,8,1]
-insertion_sort(measure_data)
-print(measure_data)
-assert [1, 2, 3, 7, 8] == measure_data
+if __name__ == "__main__":
+    # Verify
+    measure_data = [2,7,3,8,1]
+    insertion_sort(measure_data)
+    print(measure_data)
+    assert [1, 2, 3, 7, 8] == measure_data
