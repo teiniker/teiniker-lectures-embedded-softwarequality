@@ -1,8 +1,20 @@
 Exercise: Fixture Setup - Order 
 -------------------------------------------------------------------------------
 
-Implement a custom creation method called "create_order()" which 
-sets up the [Order] --[*]-> [OrderLine] --[1]-> [Product] objects
-used in the given test case.  
+Implement a dedicated creation method named `create_order()` for this test fixture.
 
-Make sure that the verification is working.
+Goal:
+- Build and return a complete object graph used by the test:
+    [Order] --[*]-> [OrderLine] --[1]-> [Product]
+
+Requirements:
+1. `create_order()` must create all required domain objects (`Order`, one or 
+    more `OrderLine`, and corresponding `Product` instances).
+2. Each `OrderLine` must reference exactly one valid `Product`.
+3. The `Order` must contain the created `OrderLine` entries.
+
+Verification:
+- Ensure existing assertions pass after refactoring.
+
+The fixture setup should improve readability, reduce duplication, and keep test 
+intent focused on verification.
