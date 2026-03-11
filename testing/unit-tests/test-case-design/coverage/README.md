@@ -24,7 +24,7 @@ The **command line** provides a simple way to run our tests, coverage analysis, 
 
 _Example_: Run the test class from the command line.
 ```
-$ python3 comparator_test.py 
+$ python comparator_test.py 
 ```
 
 To run the coverage analysis, we just replace the initial `python3` with `coverage run`.
@@ -56,8 +56,8 @@ To measure branch coverage, run `coverage.py` with the `--branch` flag.
 _Example_: Measure branch coverage
 ```
 $ coverage run --branch -m unittest comparator_test.py
-$ coverage3 report 
-$ coverage3 html
+$ coverage report 
+$ coverage html
 ```
 When you report on the results with coverage report or coverage html, 
 the percentage of branch possibilities taken will be included in the 
@@ -74,4 +74,4 @@ at the far right showing branch destination line numbers that were not exercised
 
 * [Coverage.py](https://coverage.readthedocs.io/en/6.3.2/)
 
-*Egon Teiniker, 2020-2025, GPL v3.0*
+*Egon Teiniker, 2020-2026, GPL v3.0*
