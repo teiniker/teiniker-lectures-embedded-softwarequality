@@ -80,16 +80,16 @@ across a file or an entire project.
 
 ```bash 
 # Format all files in the current directory (and any subdirectories).
-ruff format                          
+$ ruff format                          
 
 # Format all files in `/path/to/code` (and any subdirectories).
-ruff format path/to/code/            
+$ ruff format path/to/code/            
 
 # Format all `.py` files in `/path/to/code`.
-ruff format path/to/code/*.py        
+$ ruff format path/to/code/*.py        
 
 # Format `file.py`.
-ruff format path/to/code/to/file.py  
+$ ruff format path/to/code/to/file.py  
 ```
 
 ## Ruff vs. Pylint
