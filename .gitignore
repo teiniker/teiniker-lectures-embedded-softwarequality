@@ -6,4 +6,4 @@ misc/
 .pytest_cache/
 .ruff_cache/
 .venv/
-Agent.md
+AGENTS.md
