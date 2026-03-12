@@ -3,7 +3,7 @@ from user import User, Mail
 class TestUser:
 
     def test_inline_fixture(self):
-        # setup
+        # Setup
         mail = Mail('homer.simpson@springfield.com')
         user = User(7, 'homer', 'Kqq3lbODaQT4LvxsoihdknrtdSBiFOHaODQY65DJBS8=', mail)
 
@@ -30,7 +30,7 @@ class TestUser:
 
 
     def test_delegation_fixture(self):
-        # setup
+        # Setup
         user = self.create_user()
 
         # exercise

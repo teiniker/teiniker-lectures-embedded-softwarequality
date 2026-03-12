@@ -2,7 +2,7 @@ import pytest
 
 from user import User, Mail
 
-@pytest.fixture
+@pytest.fixture # Creation function
 def user():
     mail = Mail('homer.simpson@springfield.com')
     return User(7, 'homer', 'Kqq3lbODaQT4LvxsoihdknrtdSBiFOHaODQY65DJBS8=', mail)

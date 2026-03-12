@@ -16,10 +16,10 @@ class UserTable():
     def __init__(self) -> None:
         self._users:list[User] = []    # ---[*]-> [User]
 
-    def insert(self, user) -> None:
+    def insert(self, user:User) -> None:
         self._users.append(user)
 
-    def find_by_id(self, oid:int):
+    def find_by_id(self, oid:int) -> User | None:
         for user in self._users:
             if user.oid == oid:
                 return user
@@ -44,6 +44,11 @@ if __name__ == '__main__':
     table.insert(homer)
     table.insert(marge)
 
-    assert 'marge' == table.find_by_id(7).username
-    assert 'homer' == table.find_by_id(3).username
+    marge_user = table.find_by_id(7)
+    assert marge_user is not None           # find_by_id(self, oid:int) -> None
+    assert 'marge' == marge_user.username   # find_by_id(self, oid:int) -> User
+
+    homer_user = table.find_by_id(3)
+    assert homer_user is not None           # find_by_id(self, oid:int) -> None
+    assert 'homer' == homer_user.username   # find_by_id(self, oid:int) -> User
     assert 2 == len(table.find_all())
