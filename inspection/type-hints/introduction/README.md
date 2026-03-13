@@ -1,4 +1,4 @@
-# Type Hints in Python
+# Type Hints
 
 Languages such as C/C++ or Java are statically typed. Essentially 
 this means that type checking will take place at compile time based 
@@ -16,22 +16,156 @@ The static type checking and the type hints can be introduced at
 **specific parts of the code** where such typing safety is desired.
 
 
-_Example:_ The syntax is as follows for **type hints of function parameters** 
-and the function's **return type**:
+## Type Hints in Functions 
+
+Python type hints let us describe what kinds of parameter values a function 
+expects and returns.
+
+**Basic syntax**:
 
 ```Python
-def fn(arg1: type1, arg2: type2, ...) -> ReturnType:
+def fn(arg1:type1, arg2:type2, ...) -> ReturnType:
     pass
 ```
 
-_Example:_ Type hints can also be used to **specify the element types 
-of data structures**:
+_Example:_ Parameter list and return value
 
 ```Python
-data_list:list[str] = []
-data_douple:tuple[str, ...] = ("1", "2")
-data_dict:dict[int, str] = {} 
+def max_value(a:int, b:int) -> int:
+    if a > b:
+        return a
+    else:
+        return b
 ```
+
+_Example:_ Default values
+
+```Python
+def power(base: int, exponent: int = 2) -> int:
+    return base ** exponent
+```
+
+_Example:_ Lists, dictionaries, tuples
+
+```Python
+def total(prices: list[int]) -> int:
+    return sum(prices)
+
+def get_user() -> dict[str, str]:
+    return {"name": "Homer", "city": "Springfield"}
+
+def point() -> tuple[int, int]:
+    return (10, 20)
+```
+
+_Example:_ Optional values (if a parameter can be None)
+
+```Python
+def print_name(name: str | None) -> None:
+    if name is None:
+        print("No name")
+    else:
+        print(name)
+```
+
+_Example:_ Many possible types
+
+```Python
+def stringify(value: int | float | str) -> str:
+    return str(value)
+```    
+
+_Example:_ Any type (allow anything)
+
+```Python
+from typing import Any
+
+def debug(value: Any) -> None:
+    print(value)
+```    
+This is flexible, but less precise.
+
+
+## Type Hints in Classes
+
+Python type hints in classes are mainly used to describe the types of 
+attributes and methods.
+
+_Example:_ Type hints for instance attributes
+
+```Python
+class Article:
+    oid: int
+    description: str
+    price: int
+
+    def __init__(self, oid: int, description: str, price: int) -> None:
+        self.oid = oid
+        self.description = description
+        self.price = price
+```    
+
+Because the attributes only use type hints (:) and assigns no actual values, 
+they aren't realized class attributes in standard Python.
+
+Here we use type hints for both:
+
+* **Attribute annotations** document the expected instance attributes 
+    of the class (readers can see what data the object has).
+
+* **Constructor annotations** document what arguments callers must pass 
+    to create the object.  
+
+
+_Example:_ Type hints in methods
+
+```Python
+    def formatted_price(self) -> str:
+        return f"{self.price} cents"
+
+    def apply_discount(self, percent: float) -> float:
+        return self.price * (1 - percent / 100)
+```    
+
+_Example:_ Type hints for class variables
+
+Sometimes a variable belongs to the class itself, not each instance. 
+Use `ClassVar`.
+
+```Python
+class Article:
+    category: ClassVar[str] = "General"
+```    
+
+_Example:_ Dataclass
+
+```Python
+@dataclass
+class Article:
+    oid:int
+    description:str
+    price:int
+```
+
+_Example:_ Referring to other classes (a class use another class as an attribute type)
+
+```Python
+class Author:
+    name: str
+
+    def __init__(self, name: str) -> None:
+        self.name = name
+
+
+class Article:
+    title: str
+    author: Author
+
+    def __init__(self, title: str, author: Author) -> None:
+        self.title = title
+        self.author = author
+```    
+
 
 ## Using a Static Type Checker
 

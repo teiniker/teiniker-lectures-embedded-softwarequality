@@ -6,8 +6,7 @@ A data class is **a class that is primarily used to store data** and has
 minimal or no methods. It provides a concise way to define a class with 
 default behaviors for `init`, `repr`, `eq`, and more.
 
-_Example:_ 
-
+_Example:_ Dataclass `Article`
 
 ```Python 
 @dataclass
@@ -44,7 +43,12 @@ The general rules are:
 * **No type hint**: Not treated as a dataclass field
 
 Note that type hints like `int` and `str` are not enforced automatically 
-at runtime.
+at runtime. They can be checkt by tools like **mypy**, Pyright, and IDEs.
+
+`dataclass` uses the class’s type annotations `__annotations__` to know 
+which attributes are fields.
+
+`__annotations__` is usually a dict mapping names to their annotated types.
 
 
 ## References

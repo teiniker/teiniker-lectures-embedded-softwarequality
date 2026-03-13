@@ -1,5 +1,9 @@
 
 class User():
+    oid: int
+    username: str
+    password: str
+
     def __init__(self, oid:int, username:str, password:str) -> None:
         self.oid = oid
         self.username = username
@@ -9,24 +13,28 @@ class User():
         return f"User: id={self.oid}, username='{self.username}'"
 
     def __eq__(self, other) -> bool:
+        if not isinstance(other, User):
+            return NotImplemented
         return self.oid == other.oid and self.username == other.username
 
 
 class UserTable():
+    users: list[User]   # ---[*]-> [User]
+
     def __init__(self) -> None:
-        self._users:list[User] = []    # ---[*]-> [User]
+        self.users = []
 
     def insert(self, user:User) -> None:
-        self._users.append(user)
+        self.users.append(user)
 
     def find_by_id(self, oid:int) -> User | None:
-        for user in self._users:
+        for user in self.users:
             if user.oid == oid:
                 return user
         return None
 
     def find_all(self) -> list[User]:
-        return self._users
+        return self.users
 
 
 if __name__ == '__main__':

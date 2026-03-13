@@ -1,12 +1,9 @@
 from abc import ABC
 
-# Type Hints can be used to specify the expected type of a parameter
-# or the return type of a function.
-#
-# MyPy is a static type checker that can be used to verify that
-# the type hints are correct.
-
 class Part(ABC):
+    value: int
+    tolerance: int
+
     def __init__(self, value:int, tolerance:int):
         self.tolerance = tolerance
         self.value= value
@@ -18,7 +15,6 @@ class Resistor(Part):
 
     def __str__(self):
         return f'Resistor: value={self.value}Ohm, tolerance={self.tolerance}%'
-
 
 class Capacitor(Part):
     def __init__(self, value:int, tolerance:int=5):
@@ -69,4 +65,3 @@ if __name__ == '__main__':
 
     print_part(r1)  # r1 "is a " Part
     print_part(c1)  # c1 "is a " Part
-        
