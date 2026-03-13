@@ -14,19 +14,19 @@ class User():
 
 class UserTable():
     def __init__(self):
-        self._users = []    # ---[*]-> [User]
+        self.users = []    # ---[*]-> [User]
 
     def insert(self, user):
-        self._users.append(user)
+        self.users.append(user)
 
     def find_by_id(self, oid):
-        for user in self._users:
+        for user in self.users:
             if user.oid == oid:
                 return user
         return None
 
     def find_all(self):
-        return self._users
+        return self.users
 
 
 if __name__ == '__main__':
