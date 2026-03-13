@@ -209,11 +209,7 @@ helping us catch errors early without running mypy manually.
 
 
 ## References
-* [YouTube: Static Typing in Python](https://youtu.be/2gBP1qN5T7I)
-* [YouTube (Real Python): Python Type Hints: Pros & Cons](https://youtu.be/QS7m167SVXU)
-* [YouTube (Real Python): Forward References and Python 3 Type Hints](https://youtu.be/AJsrxBkV3kc)
-
-* [Type checking your Python code!](https://medium.com/juntos-somos-mais/type-checking-your-python-code-76d24b75a2ee)
+* [YouTube (Corey Schafer): Python Tutorial: Type Hints - From Basic Annotations to Advanced Generics](https://youtu.be/RwH2UzC2rIo?si=_9rr4r7pscKUy1fA)
 
 * [PEP 484 – Type Hints](https://peps.python.org/pep-0484/)
 
