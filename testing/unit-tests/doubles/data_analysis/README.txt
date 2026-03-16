@@ -1,15 +1,17 @@
 
 How to run the test cases?
 -------------------------------------------------------------------------------
-$ python3 -m unittest data_analysis_test.py
+$ pytest test_data_analysis.py 
+
+test_data_analysis.py ....  
 
 
 How to run the code coverage analysis?
 -------------------------------------------------------------------------------
-$ coverage3 run -m unittest data_analysis_test.py
+$ pytest test_data_analysis.py --cov=data_analysis
 
-$ coverage3 report 
-
-$ coverage3 html
-=> Browser: htmlcov/index.html
-
+Name               Stmts   Miss  Cover
+--------------------------------------
+data_analysis.py      21      0   100%
+--------------------------------------
+TOTAL                 21      0   100%

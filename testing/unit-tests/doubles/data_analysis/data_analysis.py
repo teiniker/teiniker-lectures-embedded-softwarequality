@@ -1,4 +1,5 @@
 import statistics
+from typing import Protocol
 
 
 class DataAccessError(Exception):
@@ -8,8 +9,15 @@ class ServiceError(Exception):
     pass
 
 
+class DataAccess(Protocol):
+    def read_data(self) -> list[float]:
+        ...
+
+
 class DataAnalysisService:
-    def __init__(self, dao) -> None:
+    dao: DataAccess  # ---[1]-> DataAccess
+
+    def __init__(self, dao: DataAccess) -> None:
         self.dao = dao
 
     def mean_value(self) -> float:
