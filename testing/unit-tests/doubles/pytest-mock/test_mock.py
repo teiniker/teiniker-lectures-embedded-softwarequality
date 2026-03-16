@@ -42,20 +42,20 @@ def test_called_once(mocker):
     doc = mocker.Mock()
 
     # exercise
-    doc.loads('{"key": "value"}')
-    doc.loads('{"key": "value"}')
+    doc.load('{"key": "value"}')
+    doc.load('{"key": "value"}')
 
     # verify
     with pytest.raises(AssertionError):
-        doc.loads.assert_called_once()
+        doc.load.assert_called_once()
 
 
 def test_called_count(mocker):
     doc = mocker.Mock()
 
     # exercise
-    doc.loads('{"key": "value"}')
-    doc.loads('{"key": "value"}')
+    doc.load('{"key": "value"}')
+    doc.load('{"key": "value"}')
 
     # verify
-    assert doc.loads.call_count == 2
+    assert doc.load.call_count == 2

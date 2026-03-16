@@ -147,5 +147,9 @@ There are two main ways to use this information:
 
 ## References
 
+* [pytest-mock Documentation](https://pytest-mock.readthedocs.io/en/latest/)
+* [GitHub: pytest-mock](https://github.com/pytest-dev/pytest-mock)
+
+* [unittest.mock — mock object library](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock)
 
 *Egon Teiniker, 2020-2026, GPL v3.0*
