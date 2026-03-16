@@ -14,5 +14,5 @@ Implement all test cases, using Mock objects for "DataAccess" in the file called
 
 
 Tip: Use the following command to measure the code coverage:
-$ pytest test_data_analysis.py --cov=data_analysis
+$ pytest test_data_analysis.py --cov=data_analysis --cov-report=term-missing
 

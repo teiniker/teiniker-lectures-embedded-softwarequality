@@ -1,27 +1,18 @@
-
 How to run the test cases?
 -------------------------------------------------------------------------------
-$ pwd
-measurement
 
-$ python3 -m unittest multimeter_test.py
-....
-----------------------------------------------------------------------
-Ran 4 tests in 0.001s
-OK
+$ pytest test_multimeter.py 
+
+test_multimeter.py .... 
+
 
 How to run the code coverage analysis?
 -------------------------------------------------------------------------------
-$ coverage3 run -m unittest multimeter_test.py
 
-$ coverage3 report 
-Name                 Stmts   Miss  Cover
-----------------------------------------
-multimeter.py           24      0   100%
-multimeter_test.py      25      1    96%
-----------------------------------------
-TOTAL                   49      1    98%
+$ pytest test_multimeter.py --cov=multimeter --cov-report=term-missing
 
-$ coverage3 html
-=> Browser: htmlcov/index.html
-
+Name            Stmts   Miss  Cover   Missing
+---------------------------------------------
+multimeter.py      26      0   100%
+---------------------------------------------
+TOTAL              26      0   100%

@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import Protocol
 
 class MeasurementError(Exception):
     pass
@@ -13,8 +14,20 @@ class MODE(Enum):
     ACI = 4
     RES = 5
 
+
+class Device(Protocol):
+    def set_measurement_mode(self, mode: str) -> None:
+        ...
+
+    def set_measurement_range(self, range_value: float) -> None:
+        ...
+
+    def get_measurement_value(self) -> float:
+        ...
+
+
 class Multimeter:
-    def __init__(self, device) -> None:
+    def __init__(self, device: Device) -> None:
         self.device = device
         self.mode_dictionary = {
                 MODE.DCV: "dc_v",
