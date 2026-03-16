@@ -8,6 +8,7 @@ class DataAccessError(Exception):
 class ServiceError(Exception):
     pass
 
+# TODO: DataAccess(Protocol)
 
 class DataAnalysisService:
     def __init__(self, dao) -> None:

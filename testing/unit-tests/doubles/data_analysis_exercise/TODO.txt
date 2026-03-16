@@ -4,26 +4,15 @@ Exercise: Mock Object + Code Coverage
 Given the implementation of the "DataAnalysisService" class, implement all test 
 cases needed to realize a code coverage of 100%.
 
-The "DataAnalysisService" class uses another class which is referenced by the 
-attribute "dao". 
-Also a "DataAccessError" exception can by thrown by the device object.
+A) DataAccess - Protocol
+Define a "DataAccess" Protocol in the "data_analysis.py" file which can be used 
+as a specification for a Mock object.
 
-You have to use a Mock object to substitute the device objects for your tests.  
-
-Put all tests in the file called "data_analysis_test.py".
-
-
-How to run the test cases?
---------------------------
-$ python3 data_analysis_test.py
+B) Test Cases
+Implement all test cases, using Mock objects for "DataAccess" in the file called 
+"test_data_analysis.py", to reach a 100% code coverage.
 
 
-How to run the code coverage analysis?
--------------------------------------------------------------------------------
-$ coverage3 run data_analysis_test.py
-
-$ coverage3 report 
-
-$ coverage3 html
-=> Browser: htmlcov/index.html
+Tip: Use the following command to measure the code coverage:
+$ pytest test_data_analysis.py --cov=data_analysis
 
