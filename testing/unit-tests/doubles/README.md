@@ -53,4 +53,4 @@ Types of Test Doubles:
 * Gerard Meszaros. **xUnit Test Patterns**. Addison-Wesley, 2007
     * Chapter 11: Using Test Doubles
 
-*Egon Teiniker, 2020-2025, GPL v3.0*l
+*Egon Teiniker, 2020-2026, GPL v3.0*
