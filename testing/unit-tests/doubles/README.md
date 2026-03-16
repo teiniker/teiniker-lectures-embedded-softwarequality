@@ -5,9 +5,9 @@
 * Example: [data_service](data_service/)
 
 * Exercise: [data_analysis](data_analysis_exercise/) ([Model Solution](data_analysis/))
-* Exercise: [data_analysis](measurement_exercise/)
+* Exercise: [data_analysis](measurement_exercise/) ([Model Solution](measurement/))
 
-* Example: [data_analysis_patch]()
+* Example: [data_analysis_patch](data_analysis_patch/)
 
 
 ## References
