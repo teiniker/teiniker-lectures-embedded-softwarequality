@@ -4,7 +4,7 @@ Instead of using a real `DataAccessObject`, we use a **Mock object**
 to simulate the behavior of the `DataAccessObject`.
 
 ```Python
-    dao = mocker.Mock()
+    dao =  mocker.Mock(spec=DataAccess)
     dao.read_data.return_value = [0.8273, 0.7822, 0.9731, 0.1239, 0.9898]
     service = DataService(dao)
 ```
@@ -12,7 +12,7 @@ to simulate the behavior of the `DataAccessObject`.
 In the same way, we can simulate error conditions:
 
 ```Python
-    dao = mocker.Mock()
+    dao =  mocker.Mock(spec=DataAccess)
     dao.read_data.side_effect = DataAccessError("Can not read data!")
     service = DataService(dao)
 ```
@@ -47,6 +47,9 @@ class DataAccess(Protocol):
 
 So this is **structural typing**: the object does not need to 
 inherit from `DataAccess`. It only needs to match the method signatures.
+
+`mocker.Mock(spec=DataAccess)` creates a mock object whose allowed API 
+is constrained by `DataAccess`.
 
 
 ## Dependency Injection
