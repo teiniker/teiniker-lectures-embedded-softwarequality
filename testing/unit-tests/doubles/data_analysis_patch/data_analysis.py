@@ -11,10 +11,11 @@ class ServiceError(Exception):
 
 
 class DataAccessObject:
-    def __init__(self, filename):
+    filename: str
+    def __init__(self, filename: str) -> None:
         self.filename = filename
 
-    def read_data(self):
+    def read_data(self) -> list[float]:
         try:
             with open(self.filename, 'r', encoding="utf-8") as file:
                 reader = csv.reader(file, delimiter=',')
@@ -28,10 +29,12 @@ class DataAccessObject:
 
 
 class DataAnalysisService:
-    def __init__(self, dao):
+    dao: DataAccessObject # ---[1]--> DataAccessObject
+
+    def __init__(self, dao: DataAccessObject) -> None:
         self.dao = dao
 
-    def mean_value(self):
+    def mean_value(self) -> float:
         try:
             values = self.dao.read_data()
             print(values)
@@ -39,7 +42,7 @@ class DataAnalysisService:
         except DataAccessError as ex:
             raise ServiceError('Can not read data!') from ex
 
-    def max_value(self):
+    def max_value(self) -> float:
         try:
             values = self.dao.read_data()
             values.sort()
