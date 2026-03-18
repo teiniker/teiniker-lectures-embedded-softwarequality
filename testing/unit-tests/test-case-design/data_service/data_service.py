@@ -7,17 +7,21 @@ class DataAccessError(Exception):
 
 
 class DataAccessObject:
+    data :list[float]
+
     def __init__(self) -> None:
-        self._data:list[float] = []
+        self.data = []
 
     def read_data(self) -> list[float]:
-        return self._data
+        return self.data
 
     def save_data(self, data:list[float]) -> None:
-        self._data = data
+        self.data = data
 
 
 class DataService:
+    dao: DataAccessObject # ---[1]-> DataAccessObject
+
     def __init__(self, dao:DataAccessObject) -> None:
         self.dao = dao
 
