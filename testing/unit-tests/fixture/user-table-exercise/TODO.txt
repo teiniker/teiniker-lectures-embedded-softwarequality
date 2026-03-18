@@ -1,0 +1,16 @@
+Exercise: Fiture Setup - UserTable
+-------------------------------------------------------------------------------
+
+Refactor the given test cases to reduce code redundancy.
+Use @pytest.fixture to implement common setup code.
+
+A) test_user.py 
+    - Identify redundant setup code 
+    - Implement @pytest.fixture function
+    - Refactor test functions
+
+B) test_user_table.py 
+    - Identify redundant setup code 
+    - Implement @pytest.fixture function
+    - Refactor test functions
+
