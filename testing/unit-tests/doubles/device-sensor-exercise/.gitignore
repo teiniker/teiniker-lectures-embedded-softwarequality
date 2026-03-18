@@ -1,0 +1,3 @@
+htmlcov/
+.coverage
+__pycache__

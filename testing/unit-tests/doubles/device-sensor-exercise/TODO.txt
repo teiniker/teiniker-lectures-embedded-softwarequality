@@ -1,0 +1,18 @@
+Exercise: Mock Object - Device and Sensor
+-------------------------------------------------------------------------------
+
+Given the implementation of the "Device" class, implement all test 
+cases needed to realize a code coverage of 100%.
+
+A) Sensor - Protocol
+Define a "Sensor" Protocol in the "device.py" file which can be used 
+as a specification for a Mock object.
+
+B) Test Cases
+Implement all test cases, using Mock objects for "Sensor" in the file called 
+"test_device.py", to reach a 100% code coverage.
+
+
+Tip: Use the following command to measure the code coverage:
+
+$ pytest test_device.py --cov=device --cov-report=term-missing
