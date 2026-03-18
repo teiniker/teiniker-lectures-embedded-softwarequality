@@ -1,0 +1,5 @@
+
+
+
+
+$ pytest test_*.py --cov=user_table --cov-branch --cov-report=term-missing

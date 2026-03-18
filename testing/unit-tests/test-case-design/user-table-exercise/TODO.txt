@@ -1,0 +1,11 @@
+Exercise: Test Case Design based on Code Coverage - User Table
+-------------------------------------------------------------------------------
+
+To test the "User" and "UserTable" class defined in "user_table.py", implement 
+a comprehensive set of unit test cases that achieves 100% code coverage.
+
+Put all tests in a file called "test_user_table.py".
+
+Use the following command to measure code coverage:
+
+$ pytest test_*.py --cov=user_table --cov-branch --cov-report=term-missing
