@@ -45,5 +45,7 @@ if __name__ == '__main__':
     table.insert(marge)
 
     assert 'marge' == table.find_by_id(7).username
+
     assert 'homer' == table.find_by_id(3).username
+
     assert 2 == len(table.find_all())

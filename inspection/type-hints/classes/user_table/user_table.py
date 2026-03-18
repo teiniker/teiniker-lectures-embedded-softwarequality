@@ -59,4 +59,5 @@ if __name__ == '__main__':
     homer_user = table.find_by_id(3)
     assert homer_user is not None           # find_by_id(self, oid:int) -> None
     assert 'homer' == homer_user.username   # find_by_id(self, oid:int) -> User
+
     assert 2 == len(table.find_all())
