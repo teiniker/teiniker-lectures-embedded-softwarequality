@@ -2,7 +2,8 @@
 
 * [pytest-mock](pytest-mock/)
 
-* Example: [data_service](data_service/)
+* Example: [data-service (abc)](data-service-abc/)
+* Example: [data-service (protocol)](data-service-protocol/)
 
 * Exercise: [data_analysis](data_analysis_exercise/) ([Model Solution](data_analysis/))
 * Exercise: [measurement](measurement_exercise/) ([Model Solution](measurement/))
