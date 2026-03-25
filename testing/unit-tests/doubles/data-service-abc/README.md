@@ -18,35 +18,37 @@ In the same way, we can simulate error conditions:
 ```
 
 
-## Using Protocol 
+## Using ABC Class
 
-A `Protocol` in Python is a way to describe what an object must be able 
-to do, without requiring inheritance.
+An abstract base class in Python is a way to define a common interface
+that subclasses must implement.
 
-Note that `DataAccess` is not a real implementation. It is a type contract.
+Note that `DataAccess` is not a real implementation. It is an abstract contract.
 
 _Example:_ `data_service.py`
 
 ```Python
-class DataAccess(Protocol):
+class DataAccess(ABC):
+    @abstractmethod
     def load_data(self) -> list[float]:
-        ...
+        pass
 
+    @abstractmethod
     def save_data(self, data: list[float]) -> None:
-        ...
+        pass
 ```
 
-* `Protocol` defines the required method shape for any object used 
-    as a `DataAccess`.
-- Any object that has `load_data()` returning `list[float]` and 
-    `save_data(data)` returning `None` is accepted by type checkers 
-    as a valid `DataAccess`.
+* `ABC` defines the required methods for any class used as a `DataAccess`.
+* A concrete subclass must implement `load_data()` returning `list[float]`
+  and `save_data(data)` returning `None`.
+* The `@abstractmethod` decorator marks methods that subclasses are required
+  to implement.
 
-* The `...` is the **Ellipsis literal** and means _method body 
-    intentionally omitted_. This is **only a declaration**, not behavior.
+* `pass` provides an empty method body because the base class only declares
+  the interface and does not provide behavior.
 
-So this is **structural typing**: the object does not need to 
-inherit from `DataAccess`. It only needs to match the method signatures.
+So this is **nominal typing**: an implementation is expected to inherit from
+`DataAccess` and provide the abstract methods.
 
 `mocker.Mock(spec=DataAccess)` creates a mock object whose allowed API 
 is constrained by `DataAccess`.
@@ -65,14 +67,16 @@ with the mock object.
 Using the Mock object, we can reach a 100% code coverage.
 
 ```bash
-$ pytest test_data_service.py --cov=data_service
+$ pytest test_data_service.py --cov=data_service --cov-report=term-missing
 
 Name              Stmts   Miss  Cover   Missing
 -----------------------------------------------
-data_service.py      17      0   100%
+data_service.py      23      2    91%   15, 19
 -----------------------------------------------
-TOTAL                17      0   100%
+TOTAL                23      2    91%
 ```
 
+We measure `91%`because the second method of the `DataAccess(ABC)` 
+class is not used.
 
 *Egon Teiniker, 2020-2026, GPL v3.0*
