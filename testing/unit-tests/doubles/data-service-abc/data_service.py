@@ -1,4 +1,4 @@
-from typing import Protocol
+from abc import ABC, abstractmethod
 
 
 class ServiceError(Exception):
@@ -9,12 +9,14 @@ class DataAccessError(Exception):
     pass
 
 
-class DataAccess(Protocol):
+class DataAccess(ABC):
+    @abstractmethod
     def load_data(self) -> list[float]:
-        ...
+        pass
 
+    @abstractmethod
     def save_data(self, data: list[float]) -> None:
-        ...
+        pass
 
 
 class DataService:
