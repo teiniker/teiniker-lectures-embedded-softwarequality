@@ -25,7 +25,7 @@ To get started, we need to install both `pytest` and the `pytest-cov`
 plugin. 
 
 ```bash
-$ pip install pytest pytest-cov
+$ pip install pytest-cov
 ```
 
 

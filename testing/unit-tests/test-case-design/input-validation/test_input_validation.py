@@ -4,7 +4,6 @@ from user import User, ValidationError
 
 def test_assert_each_property():
     user = User(7, "homer", "Kqq3lbODaQT4LvxsoihdknrtdSBiFOHaODQY65DJBS8=")
-
     # Verification
     assert 7 == user.oid
     assert "homer" == user.username
@@ -12,12 +11,12 @@ def test_assert_each_property():
 
 
 def test_assert_id_value():
-    with pytest.raises(ValueError):
+    with pytest.raises(ValidationError):
         User(-7, "homer", "Kqq3lbODaQT4LvxsoihdknrtdSBiFOHaODQY65DJBS8=")
 
 
 def test_assert_username():
-    with pytest.raises(ValueError):
+    with pytest.raises(ValidationError):
         User(7, "ho", "Kqq3lbODaQT4LvxsoihdknrtdSBiFOHaODQY65DJBS8=")
 
 

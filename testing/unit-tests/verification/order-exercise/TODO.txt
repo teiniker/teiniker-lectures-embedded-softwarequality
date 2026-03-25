@@ -4,15 +4,15 @@ Exercise: Result Verification with Custom Assertions — Order
 Implement reusable custom assertion helpers to compare two `Order` object trees
 field-by-field, instead of relying on object identity or default equality.
 
-A) `assert_equal_product(self, expected, actual)`
+A) assert_equal_product(self, expected:Product, actual:Product) -> None
     - Verify all relevant `Product` attributes (for example: id, name, price).
     - Fail with a clear, attribute-specific message when values differ.
  
-B) `assert_equal_order_line(self, expected, actual)`
+B) assert_equal_order_line(self, expected:OrderLine, actual:OrderLine) -> None
     - Verify `OrderLine` scalar attributes (for example: quantity, subtotal).
     - Reuse `assert_equal_product(...)` to compare nested `product`.
  
-C) `assert_equals_order(self, expected, actual)`
+C) assert_equals_order(self, expected:Order, actual:Order)
     - Verify `Order` scalar attributes (for example: order_id, customer, date).
     - Verify the number of order lines is the same.
     - Compare each order line in order, reusing `assert_equal_order_line(...)`.
