@@ -8,7 +8,7 @@ class ServiceError(Exception):
 class DataAccessError(Exception):
     pass
 
-
+# DOC - Dependendent on Component
 class DataAccess(Protocol):
     def load_data(self) -> list[float]:
         ...
@@ -16,7 +16,7 @@ class DataAccess(Protocol):
     def save_data(self, data: list[float]) -> None:
         ...
 
-
+# SUT - System Under Test
 class DataService:
     dao: DataAccess # ---[1]-> DataAccess
 

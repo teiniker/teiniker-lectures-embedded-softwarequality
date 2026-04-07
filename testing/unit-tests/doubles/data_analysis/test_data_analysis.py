@@ -6,8 +6,8 @@ from data_analysis import DataAccess, DataAccessError, DataAnalysisService, Serv
 def test_mean_value(mocker):
     # Setup
     dao = mocker.Mock(spec=DataAccess)
-    service = DataAnalysisService(dao)
     dao.read_data.return_value = [0.8273, 0.7822, 0.9731, 0.1239, 0.9898]
+    service = DataAnalysisService(dao)
     # Exercise
     mean = service.mean_value()
     # Verify
@@ -18,8 +18,8 @@ def test_mean_value(mocker):
 def test_max_value(mocker):
     # Setup
     dao = mocker.Mock(spec=DataAccess)
-    service = DataAnalysisService(dao)
     dao.read_data.return_value = [0.8273, 0.7822, 0.9731, 0.1239, 0.9898]
+    service = DataAnalysisService(dao)
     # Exercise
     maximum = service.max_value()
     # Verify
@@ -29,8 +29,8 @@ def test_max_value(mocker):
 def test_mean_value_exception(mocker):
     # Setup
     dao = mocker.Mock(spec=DataAccess)
-    service = DataAnalysisService(dao)
     dao.read_data.side_effect = DataAccessError()
+    service = DataAnalysisService(dao)
     # Exercise / Verify
     with pytest.raises(ServiceError):
         service.mean_value()
@@ -39,8 +39,8 @@ def test_mean_value_exception(mocker):
 def test_max_value_exception(mocker):
     # Setup
     dao = mocker.Mock(spec=DataAccess)
-    service = DataAnalysisService(dao)
     dao.read_data.side_effect = DataAccessError()
+    service = DataAnalysisService(dao)
     # Exercise / Verify
     with pytest.raises(ServiceError):
         service.max_value()
