@@ -1,16 +1,19 @@
 {
   "python.defaultInterpreterPath": ".venv/bin/python",
  
-   // Make Pylance (VS Code) find packages under ./src
+  // Make Pylance (VS Code) find packages under ./src
   "python.analysis.extraPaths": [
     "${workspaceFolder}/src",
     "./configuration-management/building/project-layout/resistor-layout/src"
   ],
 
-   // Ensure pytest runs from the project root (so pytest.ini is found)
+  // Ensure pytest runs from the project root (so pytest.ini is found)
   "python.testing.cwd": "${workspaceFolder}",
 
-   // Enable pytest as the test framework
+  // Ensure code runner runs from the file directory
+  "code-runner.fileDirectoryAsCwd": true,
+
+  // Enable pytest as the test framework
   "python.testing.pytestEnabled": true,
   "python.testing.pytestArgs": ["test"],
 
