@@ -1,10 +1,10 @@
-Exercise: Persistent Fixture Setup (JSON File)
+Exercise: Persistent Fixture (JSON File)
 -------------------------------------------------------------------------------
 
-Given the test cases written in the "JsonDataTest" class, implement the missing 
-"setUp()" and "tearDown" methods:
+Given the test cases written in "test_json_data.py", implement the missing 
+setup and teardown code.
 
-A) setUp()
+A) Setup
     Create a JSON file with the name "data.json" which contains the following data 
     structure:
         'person': {
@@ -13,8 +13,7 @@ A) setUp()
             'city': 'Graz'
         }
 
-B) tearDown()
+B) Teardown
     Remove the file "data.json" from the filesystem.
-
-Tip: Use os.remove()
+    Tip: Use os.remove()
 
