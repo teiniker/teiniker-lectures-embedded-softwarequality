@@ -2,7 +2,7 @@ import pytest
 
 from multimeter import Device, DeviceError, MeasurementError, MODE, Multimeter
 
-
+# Test Spy 
 def test_multimeter_set_mode(mocker):
     # Setup
     device = mocker.Mock(spec=Device)
@@ -12,7 +12,7 @@ def test_multimeter_set_mode(mocker):
     # Verify
     device.set_measurement_mode.assert_called_with("dc_v")
 
-
+# Test Spy 
 def test_multimeter_set_range(mocker):
     # Setup
     device = mocker.Mock(spec=Device)
@@ -22,7 +22,7 @@ def test_multimeter_set_range(mocker):
     # Verify
     device.set_measurement_range.assert_called_with(10)
 
-
+# Test Stub
 def test_multimeter_measurement(mocker):
     # Setup
     device = mocker.Mock(spec=Device)
@@ -33,7 +33,7 @@ def test_multimeter_measurement(mocker):
     # Verify
     assert result == pytest.approx(5.0, abs=1e-3)
 
-
+# Test Stub with Exception
 def test_multimeter_measurement_error(mocker):
     # Setup
     device = mocker.Mock(spec=Device)

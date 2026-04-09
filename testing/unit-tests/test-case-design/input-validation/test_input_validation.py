@@ -11,8 +11,8 @@ def test_assert_each_property():
 
 
 def test_assert_id_value():
-    with pytest.raises(ValidationError):
-        User(-7, "homer", "Kqq3lbODaQT4LvxsoihdknrtdSBiFOHaODQY65DJBS8=")
+    with pytest.raises(ValidationError):  # Verification
+        User(-7, "homer", "Kqq3lbODaQT4LvxsoihdknrtdSBiFOHaODQY65DJBS8=") # Exercise
 
 
 def test_assert_username():
