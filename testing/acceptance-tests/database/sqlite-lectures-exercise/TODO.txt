@@ -34,4 +34,4 @@ B) Implement test cases for the following SQL statements:
        To check the result, only read the ids from the remaining rows
        and verify them.
 
-Put all the code into the "lectures_test.py" file.
+Put all the code into the "test_lectures.py" file.

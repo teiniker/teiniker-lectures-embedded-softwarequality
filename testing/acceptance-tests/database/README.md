@@ -9,7 +9,7 @@
 
 * Example: [data_access_object](data_access_object)
 
-* Exercise: [sqlite_lectures](sqlite_lectures_exercise) - ([Model Solution](sqlite_lectures))
+* Exercise: [sqlite-lectures](sqlite-lectures-exercise) - ([Model Solution](sqlite-lectures))
 * Exercise: [sqlite_sql_files](sqlite_sql_files_exercise/) - ([Model Solution](sqlite_sql_files/))
 * Exercise: [sqlite_books](sqlite_books_exercise/) - ([Model Solution](sqlite_books/))
 
