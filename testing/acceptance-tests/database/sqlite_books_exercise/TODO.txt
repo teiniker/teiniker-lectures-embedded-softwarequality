@@ -2,11 +2,11 @@ Exercise: Testing with Database - BookDAO
 -------------------------------------------------------------------------------
 
 Given an implementation of a Data Access Object named "BookDAO", implement the
-following test cases in the file "book_dao_test.py:
+following test cases in the file "test_book_dao.py:
 
 A) Setup
     Implement a two-step setup procedure:
-    First, setup the database table and enter some test data (once per class):
+    First, setup the database table and enter some test data (once per session):
         CREATE TABLE book (isbn TEXT PRIMARY KEY, title TEXT, authors TEXT, publisher TEXT, year INTEGER)
         INSERT INTO book (isbn, title, authors, publisher, year) VALUES ('1449355730', 'Learning Python: Powerful Object-Oriented Programming', 'Mark Lutz', 'OReilly', 2013)
         INSERT INTO book (isbn, title, authors, publisher, year) VALUES ('1593279280', 'Python Crash Course', 'Eric Matthes', 'No Starch Press', 2019)
@@ -14,7 +14,7 @@ A) Setup
 
 B) Teardown
     Implement a two-step teardown procedure:
-    First, drop the database table (once per class):
+    First, drop the database table (once per session):
         DROP TABLE book
     Second, use the "rollback()" mechanism to undo all changes of a particular test.
     Also close the connection.
