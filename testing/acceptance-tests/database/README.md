@@ -13,4 +13,4 @@
 * Exercise: [sqlite_sql_files](sqlite_sql_files_exercise/) - ([Model Solution](sqlite_sql_files/))
 * Exercise: [sqlite_books](sqlite_books_exercise/) - ([Model Solution](sqlite_books/))
 
-*Egon Teiniker, 2020-2025, GPL v3.0*
+*Egon Teiniker, 2020-2026, GPL v3.0*
