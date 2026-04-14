@@ -1,17 +1,18 @@
-Exercise: Integration Tests - Persistent Fixture (File, Database)
+Exercise: Persistent Fixture Setup, Testing with Databases (File, Database)
 -------------------------------------------------------------------------------
 
-Given the "LectureTest" class, implement a fixture setup and teardown.
+Given the "test_lectures.py" file, implement a two step fixture setup and 
+teardown.
 
 A) Setup 
-    Once per test class, load the SQL statements from the "sql/setup.sql" file
-    and execute them against the SQLIte database.
+    Once per test session, load the SQL statements from the "sql/setup.sql" file
+    and execute them against the SQLite database.
 
     For every test method, use the implicit transaction begin() statement.
 
 B) Teardown 
-    Once per test class, load the SQL statements from the "sql/teardown.sql" file
-    and execute them against the SQLIte database.
+    Once per test session, load the SQL statements from the "sql/teardown.sql" 
+    file and execute them against the SQLite database.
 
     For every test method, use the transacion rollback() operation.
 

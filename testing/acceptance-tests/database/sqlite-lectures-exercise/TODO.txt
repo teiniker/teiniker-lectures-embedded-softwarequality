@@ -1,7 +1,7 @@
 Exercise: Persistent Fixture Setup, Testing with Databases
 -------------------------------------------------------------------------------
 
-Implement a test class "LectureTest" for a database table called "lectures".
+Implement test cases for a database table called "lectures".
 
 A) Use a two step fixture setup (Shared Fixture):
 	i) Setup the database schema (and drop the schema) once per class.
