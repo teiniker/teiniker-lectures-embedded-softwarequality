@@ -5,7 +5,7 @@ DATABASE_NAME = 'testdb.db'
 SETUP_SQL_FILE = 'sql/setup.sql'
 TEARDOWN_SQL_FILE = 'sql/teardown.sql'
 
-@pytest.fixture(scope='session', autouse=True)
+@pytest.fixture(scope='session')
 def db_schema():
     # Session-level setup
     conn = sqlite3.connect(DATABASE_NAME)

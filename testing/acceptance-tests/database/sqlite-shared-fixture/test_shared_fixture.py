@@ -30,11 +30,14 @@ def db_setup():
 
 @pytest.fixture
 def db(db_setup):
+    #Setup
     conn = sqlite3.connect(DATABASE_NAME)
     cur = conn.cursor()
     # BEGIN: SQLite starts a transaction automatically when you execute
     # the first SQL statement that modifies the database.
+    # Exercise and Verify
     yield cur
+    # Teardown
     conn.rollback()
     conn.close()
 
