@@ -41,7 +41,7 @@ $ TODO: curl statement
 C) Requests Library 
 Write Python test cases which executes the curl statements via the "requests" 
 library.
-Implement the following methods in the "signal_generator_test.py" file :
+Implement the following test functions in a "test_signal_generator.py" file :
     SignalGeneratorTest(unittest.TestCase)
         test_happy_path()
         test_invalid_amplitude()
