@@ -5,6 +5,9 @@
 
 * Example: Translator
     - [Web Application](translator/translator.jar)
-
+    - SeleniumTest: [translator_selenium/](translator_selenium/)
+    - Page Object Test: [translator_selenium_po](translator_selenium_po/)
+    - Requests Test: [translator-requests](translator-requests/)
+    - Beautiful Soup Test: [translator_beautifulsoup](translator_beautifulsoup/)
 
 *Egon Teiniker, 2020-2026, GPL v3.0*

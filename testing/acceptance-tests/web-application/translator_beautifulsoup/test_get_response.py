@@ -1,29 +1,12 @@
-# Testing Web Appications Using Beautiful Soup 
+from bs4 import BeautifulSoup
 
-## Accessing the Web Page using curl 
-
-```Bash
-$ curl -i http://localhost:8080
-
-HTTP/1.1 200 
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
-Last-Modified: Fri, 14 Mar 2025 07:45:34 GMT
-Accept-Ranges: bytes
-Content-Type: text/html;charset=UTF-8
-Content-Language: en-US
-Content-Length: 1160
-Date: Wed, 14 May 2025 08:05:42 GMT
-
+html_content = '''
 <html>
 <head>
     <title>Servlet Translator</title>
 </head>
-
 <body>
 <h2>Translator </h2>
-
 <form method="POST" action="translator" >
     <table border="0" >
         <colgroup>
@@ -68,31 +51,40 @@ Date: Wed, 14 May 2025 08:05:42 GMT
 </form>
 </body>
 </html>
-```
+'''
 
-```Bash
-$ curl -i -X POST http://localhost:8080/translator -H "Content-Type: application/x-www-form-urlencoded" -d 'word=cat&language=Deutsch&action=Translate'
+soup = BeautifulSoup(html_content, 'html.parser')
 
-HTTP/1.1 200 
-Content-Type: text/html;charset=UTF-8
-Content-Language: en-US
-Transfer-Encoding: chunked
-Date: Wed, 14 May 2025 08:12:29 GMT
 
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Translation Application</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
-    <h2>
-        <p >Translate: cat into Katze</p>
-    </h2>
-    <p/>
-    <a href="index.html"> back</a>
-</body>
-</html>
-```
+def test_title():
+    title = soup.title.string.strip()
+    assert title == "Servlet Translator"
 
-*Egon Teiniker, 2020-2026, GPL v3.0*
+
+def test_form_attributes():
+    form = soup.find('form')
+    assert form.get('method') == 'POST'
+    assert form.get('action') == 'translator'
+
+
+def test_input_word_field():
+    input_word = soup.find('input', {'name': 'word'})
+    assert input_word is not None
+    assert input_word.get('type') == 'text'
+    assert input_word.get('maxlength') == '30'
+    assert input_word.get('size') == '20'
+
+
+def test_language_select_options():
+    select = soup.find('select', {'name': 'language'})
+    assert select is not None
+    options = [option.text for option in select.find_all('option')]
+    assert 'Deutsch' in options[0]
+    assert 'Francais' in options[1]
+
+
+def test_action_buttons():
+    inputs = soup.find_all('input', {'name': 'action'})
+    values = {inp.get('value') for inp in inputs}
+    assert 'Reset' in values
+    assert 'Translate' in values

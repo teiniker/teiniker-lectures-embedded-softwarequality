@@ -19,7 +19,7 @@ and modifying the parse tree.
 Beautiful Soup is a Python library and can be installed using pip:
 
 ```bash 
-$ pip3 install beautifulsoup4
+$ pip install beautifulsoup4
 ```
 
 ## Parsing HTML Content
