@@ -4,6 +4,7 @@ Exercise: Web Application Testing - Signal Generator (Selenium)
 Given a web application to configure a signal generator.
 
 Run the web application:
+$ cd signal_generator/
 $ java -jar signal-generator.jar
 
 A) Manual Tests
@@ -53,11 +54,11 @@ Implement the following page-objects in a file called "signal_generator_po_test.
     + amplitude 
     + offset 
     + waveform (enum)
-    set() returns SettingsPO
+    + set():SettingsPO
 
     SettingsPO
     + message 
-    + back() returns SignalGeneratorPO
+    + back():SignalGeneratorPO
 
 In the same file, implement a test class called "SignalGeneratorPOTest" which 
 implements the three test cases using the page-objects.
