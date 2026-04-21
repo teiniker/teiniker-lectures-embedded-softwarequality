@@ -1,5 +1,14 @@
 # JSON Content of a REST Response
 
+Given the flask-book-service which can be started with:
+
+```bash
+$ cd book-service/
+$ python book_service.py
+```
+
+# JSON Content 
+
 From a given `response` object we can parse the JSON data using `response.json()`.
 The `json()` method parses the JSON response into a **Python dictionary**.
 
@@ -55,4 +64,4 @@ List Comprehension Syntax:
 * [YouTube (Corey Schafer): Python Tutorial: Working with JSON Data using the json Module](https://youtu.be/9N6a-VLBa2I?si=9ER0IaVaDoQWmVo9)
 
 
-*Egon Teiniker, 2020-2024, GPL v3.0*
+*Egon Teiniker, 2020-2026, GPL v3.0*
