@@ -5,7 +5,7 @@ Given a web application called Translator, use Selenium IDE to generate
 automated test cases.
 
 To start the web application, open a new terminal and type:
-$ cd translator
+$ cd translator/
 $ java -jar translator.jar
 
 A) Selenium IDE
@@ -16,7 +16,7 @@ Use the Firefox Selenium IDE plugin to record the following test cases:
 
 B) Selenium WebDriver
 Generate Python code from the recorded tests and implement two test methods
-in the "translator_test.py" file using Selenium WebDriver:
+in a "test_translator.py" file using Selenium WebDriver:
     test_cat_german()
     test_cat_french()
 

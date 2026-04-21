@@ -42,14 +42,17 @@ controlling code. This is commonly referred to as just WebDriver.
 **Install Web Driver**:
 * Download the binary package [geckodriver-v0.36.0-linux64.tar.gz](https://github.com/mozilla/geckodriver/releases)
 * Unzip the tar file and store the binary in a local directory:
-    ```
+
+    ```bash
     $ cd Downloads
     $ tar xvzf geckodriver-v0.36.0-linux64.tar.gz
     $ mkdir ~/local/webdriver
     $ mv geckodriver ~/local/webdriver/
     ```
+
 * Add the webdriver directory to the PATH environment variable:
-    ```
+    
+    ```bash
     $ code ~/.bashrc
     [i]
     export WEBDRIVER=/home/student/local/webdriver/
@@ -58,7 +61,7 @@ controlling code. This is commonly referred to as just WebDriver.
 
 **Install the selenium module for Python**
     ```
-    $ pip3 install selenium
+    $ pip install selenium
     ```
 
 ## References
@@ -77,4 +80,4 @@ controlling code. This is commonly referred to as just WebDriver.
 * [YouTube: Python Selenium Tutorial #3 - Page Navigating and Clicking Elements](https://youtu.be/U6gbGk5WPws)
 
 
-*Egon Teiniker, 2020-2022, GPL v3.0*
+*Egon Teiniker, 2020-2026, GPL v3.0*

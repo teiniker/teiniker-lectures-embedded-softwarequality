@@ -1,12 +1,13 @@
-import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-class SeleniumTest(unittest.TestCase):
-    def setUp(self):
+
+class TestTranslator:
+
+    def setup_method(self):
         self.driver = webdriver.Firefox()
 
-    def tearDown(self):
+    def teardown_method(self):
         self.driver.quit()
 
     def test_cat_german(self):
@@ -28,6 +29,3 @@ class SeleniumTest(unittest.TestCase):
         self.driver.find_element(By.CSS_SELECTOR, "th:nth-child(3) > input").click()
         assert self.driver.find_element(By.CSS_SELECTOR, "p:nth-child(1)").text == "Translate: cat into Chatte"
         self.driver.find_element(By.LINK_TEXT, "back").click()
-
-if __name__ == '__main__':
-    unittest.main()
