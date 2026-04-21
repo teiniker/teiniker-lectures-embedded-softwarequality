@@ -3,8 +3,8 @@ Exercise: REST Service Testing using Requests Library - BookService
 
 Given the flask-book-service which can be started with:
 ```
-$ cd flask-book-service
-$ python3 book_service.py
+$ cd book-service/
+$ python book_service.py
 ```
 
 Access the REST service manually using the given curl statements:
@@ -17,7 +17,7 @@ $ curl -i -X PUT http://localhost:8080/books/2 -H "Content-Type: application/jso
 ```
 
 Based on the curl statements and the HTTP resonse, implement a test case
-for each statement:
+for each statement in a "test_requests.py" file:
 
 A) GET /books/1
     Verify: status code, content-type, and content
