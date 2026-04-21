@@ -3,8 +3,9 @@ Exercise: Web Service Tests (requests Library)
 
 Given the "article-service":
 
-```
-$ python3 article_service.py
+```bash
+$ cd article-service
+$ python article_service.py
 ```
 
 Implement test cases which sends the following requests to the running 
@@ -31,3 +32,5 @@ B) In "test_find_by_id()" use the JSON module to verify "id", "description",
 
 C) In "test_find_all()" validate if the ids 1,2,3 are present in the 
     returned list of articles.
+
+Implement these test cases in "test_requests.py".    
