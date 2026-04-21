@@ -6,8 +6,16 @@ In this example, we can see how simple a RESTful service can be implemented with
 ## Setup 
 
 We start the web service from the command line:
-```
-$ python3 article_service.py
+
+```bash
+# Install Flask server
+$ pip install flask
+
+# Install JSON library 
+$ pip install jsonify
+
+# Run service
+$ python article_service.py
 ```
 
 ## Access the REST Service
