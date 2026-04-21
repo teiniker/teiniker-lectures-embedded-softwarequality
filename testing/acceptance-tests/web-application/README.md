@@ -1,7 +1,9 @@
 # Testing Web Applications 
 
-* [Selenium](selenium/README.md)
-* [Beautiful Soup](beautiful-soup/README.md)
+* Tools + Frameworks 
+    - [Selenium](selenium/README.md)
+    - [Requests](README.md)
+    - [Beautiful Soup](beautiful-soup/README.md)
 
 * Example: Translator
     - [Web Application](translator/translator)

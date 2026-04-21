@@ -1,7 +1,5 @@
 # Testing Web Services
 
-* [Requests Library](http-requests/README.md)
-
 * Example: Book Service
     - Service: [book-service](book-service/)
     - Exercise: [book-service](book-service-test-exercise/) ([Model Solution](book-service-test/))
