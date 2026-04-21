@@ -9,7 +9,7 @@ The **requests library** is the de facto standard for making HTTP requests in Py
 
 To download and install the requests library, use following command:
 ```
-$ pip3 install requests
+$ pip install requests
 ```
 
 ## Requests Library
