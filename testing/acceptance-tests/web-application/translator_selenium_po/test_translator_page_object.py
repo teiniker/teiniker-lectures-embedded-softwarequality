@@ -1,11 +1,12 @@
-import unittest
 from enum import Enum
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+
 class Language(Enum):
     DEUTSCH = 1
     FRANCAIS = 2
+
 
 class TranslatorPO:
     def __init__(self, driver) -> None:
@@ -36,41 +37,43 @@ class TranslatorResultPO:
         self.driver.find_element(By.LINK_TEXT, "back").click()
 
 
-class SeleniumTest(unittest.TestCase):
-    def setUp(self):
+class TestTranslator:
+
+    def setup_method(self):
         self.driver = webdriver.Firefox()
         self.translator = TranslatorPO(self.driver)
 
-    def tearDown(self):
+    def teardown_method(self):
         self.driver.quit()
 
     def test_cat_german(self):
+        # Exercise
         self.translator.word = 'cat'
         self.translator.language = Language.DEUTSCH
         result = self.translator.translate()
-        print(result.message)
-        self.assertEqual('Translate: cat into Katze', result.message)
+        # Verify
+        assert result.message == 'Translate: cat into Katze'
 
     def test_horse_french(self):
+        # Exercise
         self.translator.word = 'horse'
         self.translator.language = Language.FRANCAIS
         result = self.translator.translate()
-        print(result.message)
-        self.assertEqual('Translate: horse into Cheval', result.message)
+        # Verify
+        assert result.message == 'Translate: horse into Cheval'
 
     def test_dog_german(self):
+        # Exercise
         self.translator.word = 'dog'
         self.translator.language = Language.FRANCAIS
         result = self.translator.translate()
-        print(result.message)
-        self.assertEqual('Translate: dog into unknown', result.message)
+        # Verify
+        assert result.message == 'Translate: dog into unknown'
 
     def test_dog_french(self):
+        # Exercise
         self.translator.word = 'dog'
         self.translator.language = Language.FRANCAIS
         result = self.translator.translate()
-        print(result.message)
-        self.assertEqual('Translate: dog into unknown', result.message)
-
-if __name__ == '__main__':
-    unittest.main()
+        # Verify
+        assert result.message == 'Translate: dog into unknown'
