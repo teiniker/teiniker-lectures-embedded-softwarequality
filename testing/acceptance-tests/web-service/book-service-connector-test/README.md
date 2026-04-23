@@ -1,67 +1,104 @@
-# JSON Content of a REST Response
+# Service Connector
 
-Given the flask-book-service which can be started with:
+The **Service Connector** pattern encapsulates all remote communication with an
+external service behind a dedicated class. Instead of scattering HTTP calls,
+status-code checks, and JSON parsing across multiple test functions, a single
+class takes responsibility for all of that - exposing a clean, typed API to the
+rest of the codebase.
+
+Key benefits:
+
+* **Separation of concerns**: Tests express *what* to verify, not *how* 
+    to talk HTTP.
+
+* **Single point of change**: If the API URL or payload format changes, only the
+  connector needs updating.
+
+* **Reusability**: The same connector can be used in tests, scripts, or other
+  components without duplicating HTTP logic.
+
+* **Readability**: Tests read like domain operations (`service.insert(book)`)
+  rather than raw HTTP sequences.
+
+
+## Start the Service
+
+Given the `book-service` which can be started with:
 
 ```bash
 $ cd book-service/
 $ python book_service.py
 ```
 
-# JSON Content 
+## Service Connector Implementation
 
-From a given `response` object we can parse the JSON data using `response.json()`.
-The `json()` method parses the JSON response into a **Python dictionary**.
+The connector class `BookService` lives in `book_service_connector.py`.
+It wraps every REST endpoint in a method and converts between the JSON 
+wire format and the `Book` transfer object.
 
-_Example:_ JSON content of a REST response
-```
-{'data':
-    [
-        {'author': 'Eric Matthes', 'id': 1, 'isbn': '978-1718502703', 'title': 'Python Crash Course'},
-        {'author': 'Brett Slatkin', 'id': 2, 'isbn': '978-0134853987', 'title': 'Effective Python'},
-        {'author': 'Luciano Ramalho', 'id': 3, 'isbn': '978-1492056355', 'title': 'Fluent Python'}
-    ]
-}
-```
+A custom exception `ServiceError` is raised whenever the server returns an
+unexpected HTTP status code, keeping error handling uniform across all methods.
 
-* This JSON response is a **dictionary** with a single key `"data"`.
-* The value associated with the `"data"` key is a **list of dictionaries**.
-* Each dictionary within the list represents a `book` and contains the following
-    key-value pairs:
-    * `"author"`: The author of the book (string).
-    * `"id"`: The ID of the book (integer).
-    * `"isbn"`: The ISBN of the book (string).
-    * `"title"`: The title of the book (string).
+_Example:_ `insert()`: Sends a POST request and returns the created `Book`
 
-
-_Example:_ Extract ids from the JSON response
-```Python
-    ids = []
-    for book in json_data['data']:
-        ids.append(book['id'])
-
-    self.assertEqual(1, ids[0])
-    self.assertEqual(2, ids[1])
-    self.assertEqual(3, ids[2])
+```python
+def insert(self, book: Book) -> Book:
+    response = requests.post(self.base_url, timeout=5, json=self._to_dict(book))
+    if response.status_code != 201:
+        raise ServiceError(f'insert failed: {response.status_code}')
+    return self._to_book(response.json())
 ```
 
-In a more compact form using a **list comprehension**, we can do that
-in a single line of code:
-```Python
-    ids = [book['id'] for book in json_data['data']]
+_Example:_ `find_by_id()`: Sends a GET request and returns a single `Book`
 
-    self.assertEqual(1, ids[0])
-    self.assertEqual(2, ids[1])
-    self.assertEqual(3, ids[2])
+```python
+def find_by_id(self, oid: int) -> Book:
+    response = requests.get(f'{self.base_url}/{oid}', timeout=5)
+    if response.status_code != 200:
+        raise ServiceError(f'find_by_id({oid}) failed: {response.status_code}')
+    return self._to_book(response.json())
 ```
 
-List Comprehension Syntax:
-* List comprehensions provide a concise way to create lists.
-* The general syntax is: `[expression for item in iterable]`.
+The private helpers `_to_book(data)` and `_to_dict(book)` translate between
+the JSON dictionary returned by the REST API and the typed `Book` object used
+in Python code.
+
+
+## Test Implementation
+
+Tests import only `Book` and `BookService`. There is no `requests` import and
+no status-code assertion in the test file. A `@pytest.fixture` creates a shared
+`BookService` instance that is injected into every test function.
+
+_Example:_ `test_find_by_id()`: Retrieves a book and asserts its field values
+
+```python
+def test_find_by_id(service):
+    book = service.find_by_id(1)
+    assert book.oid == 1
+    assert book.author == 'Eric Matthes'
+    assert book.isbn == '978-1718502703'
+    assert book.title == 'Python Crash Course'
+```
+
+_Example:_ `test_insert()`: Creates a book, verifies the returned object,
+and cleans up to keep tests idempotent
+
+```python
+def test_insert(service):
+    book = Book(oid=7, author='Wes McKinney', title='Python for Data Analysis', isbn='978-1098104030')
+    created = service.insert(book)
+    assert created.oid == 7
+    assert created.author == 'Wes McKinney'
+    assert created.title == 'Python for Data Analysis'
+    assert created.isbn == '978-1098104030'
+    service.delete(7)   # cleanup
+```
 
 
 ## References
 
-* [YouTube (Corey Schafer): Python Tutorial: Working with JSON Data using the json Module](https://youtu.be/9N6a-VLBa2I?si=9ER0IaVaDoQWmVo9)
+* [Martin Fowler: Service Stub / Gateway patterns](https://martinfowler.com/eaaCatalog/serviceStub.html)
 
 
 *Egon Teiniker, 2020-2026, GPL v3.0*
