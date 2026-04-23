@@ -4,6 +4,7 @@
     - Service: [book-service](book-service/)
     - Exercise: [book-service](book-service-test-exercise/) ([Model Solution](book-service-test/))
     - Demo: [book-service-test-json](book-service-test-json/)
+    - Demo: [book-service-connector-test](book-service-connector-test/)
     - Demo: [book-service-test-startserver](book-service-test-startserver/)
 
 * Example: Article Service
