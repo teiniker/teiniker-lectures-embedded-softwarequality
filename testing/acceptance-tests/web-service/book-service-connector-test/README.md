@@ -21,6 +21,17 @@ Key benefits:
   rather than raw HTTP sequences.
 
 
+Another advantage of the Service Connector pattern is **testability without a
+running server**. Because all remote calls are hidden behind a single class,
+that class can be replaced with a **mock object** during unit testing.
+
+Instead of injecting a real `BookService` that sends HTTP requests, a test can
+inject a mock that returns pre-defined `Book` objects. This makes unit tests:
+* **Fast**: No network round-trips
+* **Isolated**: No dependency on a running service
+* **Deterministic**: Controlled responses, no flaky network behaviour
+
+
 ## Start the Service
 
 Given the `book-service` which can be started with:
@@ -98,7 +109,8 @@ def test_insert(service):
 
 ## References
 
-* [Martin Fowler: Service Stub / Gateway patterns](https://martinfowler.com/eaaCatalog/serviceStub.html)
+* Robert Daigneau. Service Design Patterns. Addison Wesley, 2012
 
+* Chris Richardson. Microservices Patterns. Manning, 2018
 
 *Egon Teiniker, 2020-2026, GPL v3.0*
