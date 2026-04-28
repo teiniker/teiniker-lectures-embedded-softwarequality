@@ -25,7 +25,7 @@ class BookDao:
     def __init__(self, dbc):
         self.conn = dbc
 
-    def insert(self, book):
+    def insert(self, book:Book) -> None:
         sql = "INSERT INTO book (isbn, title, authors, publisher, year) VALUES (?,?,?,?,?)"
         parameters = (book.isbn, book.title, book.authors, book.publisher, book.year)
         try:
@@ -34,7 +34,7 @@ class BookDao:
         except Warning as ex:
             raise DataAccessError("Can't insert book: " + book) from ex
 
-    def find_by_isbn(self, isbn):
+    def find_by_isbn(self, isbn) -> Book:
         sql = "SELECT * FROM book WHERE isbn=?"
         parameters = (isbn,)
         try:

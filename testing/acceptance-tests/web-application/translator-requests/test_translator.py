@@ -14,7 +14,7 @@ def test_post_request():
     # Exercise
     data = {'word': 'cat', 'language': 'Deutsch', 'action': 'Translate'}
     response = requests.post(f'{BASE_URL}/translator', data, timeout=5)
-    # Verify  
+    # Verify
     assert response.status_code == 200
     assert 'Translate: cat into Katze' in response.text
 
