@@ -11,4 +11,8 @@
     - Service: [article-service](article-service/)
     - Exercise: [article-service-test](article-service-test-exercise/) ([Model Solution](article-service-test/))
 
+* Example: Message Service
+    - Service: [message-service](message-service/)
+    - Exercise: [message-service-test](message-service-test-exercise/) ([Model Solution](message-service-test/))
+
 *Egon Teiniker, 2020-2026, GPL v3.0*
