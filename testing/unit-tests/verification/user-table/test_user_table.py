@@ -12,13 +12,13 @@ def table() -> UserTable:
         .build()
     )
 
-
 def test_find_by_id_3(table):
     # Exercise
     actual = table.find_by_id(3)
     # Verify
     expected = User(3, 'Lisa', 'lKi8/hhgT')
     assert_equal_user(expected, actual)
+
 
 def test_find_by_id_7(table):
     # Exercise
