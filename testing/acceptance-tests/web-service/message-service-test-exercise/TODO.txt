@@ -1,0 +1,36 @@
+Exercise: REST Service Testing using Service Connector - MessageService
+-------------------------------------------------------------------------------
+
+Given the message-service which can be started with:
+
+$ cd message-service/
+$ python message_service.py
+
+Access the REST service manually using the given curl statements:
+
+$ curl -i http://localhost:8080/messages 
+$ curl -i http://localhost:8080/messages/1124
+$ curl -i -X POST localhost:8080/messages -H "Content-Type: application/json" -d '{"address": 1127, "priority": 3, "data":"voltage=5.0V"}'
+$ curl -i -X PUT localhost:8080/messages/1124 -H "Content-Type: application/json" -d '{"address": 1124, "priority": 9, "data":"voltage=1.0V"}'
+$ curl -i -X DELETE http://localhost:8080/messages/1124
+
+A) Message Service 
+    Start the message_service.py file and run the given curl statements.
+    Note that you have to restart the service after inserting or deleting 
+    records.
+
+B) Service Connector
+    Implement a Service Connector called "MessageService" which uses the 
+    given "Message" class and "ServiceError" exception.
+    Implement these operations:
+        def __init__(self, base_url='http://localhost:8080/messages')-> None:
+        def find_all(self) -> list:
+        def find_by_id(self, address: int) -> Message:
+        def insert(self, message: Message) -> Message:
+        def update(self, address: int, message: Message) -> Message:
+        def delete(self, address: int) -> None:
+
+C) Service Tests 
+    Based on the given curl statements and the Service Connector, 
+    implement a test case for each request in the "test_message_service.py" file:
+
