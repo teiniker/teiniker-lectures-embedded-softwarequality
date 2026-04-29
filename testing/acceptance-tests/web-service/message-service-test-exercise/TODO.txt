@@ -34,3 +34,7 @@ C) Service Tests
     Based on the given curl statements and the Service Connector, 
     implement a test case for each request in the "test_message_service.py" file:
 
+    Also implement a setup_method() and a teardown_method() which handles the 
+    persistent fixture.
+    Note that a rollback() is not working here because the service (via the 
+    DAO) also connects and commits to the database.
