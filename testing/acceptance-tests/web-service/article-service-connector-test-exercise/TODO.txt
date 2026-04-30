@@ -1,0 +1,26 @@
+Exercise: Service Connector - Article Service 
+-------------------------------------------------------------------------------
+
+For the given ArticleService:
+
+$ cd article/service 
+$ python article_service.py 
+
+we want to implement an Executable Specification (Acceptance Tests).
+
+A) Service Connector 
+Implement a class ArticleService in "article_service_connector.py" which 
+abstracts all the REST requests behind the following methods:
+
+    find_all(self) -> list
+    find_by_id(self, oid: int) -> Article
+    insert(self, article: Article) -> Article
+    update(self, oid: int, article: Article) -> Article
+    delete(self, oid: int) -> None
+
+Also implement the translation between the given Article type and JSON.
+
+B) Test Cases 
+All test cases are already implemented. Run them to see if your 
+Service Connector is working.
+
