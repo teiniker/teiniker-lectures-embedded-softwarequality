@@ -9,6 +9,9 @@ class Language(Enum):
 
 
 class TranslatorPO:
+    word: str
+    language: Language
+
     def __init__(self, driver) -> None:
         self.driver = driver
         self.driver.get('http://localhost:8080/index.html')
@@ -31,6 +34,8 @@ class TranslatorPO:
 
 
 class TranslatorResultPO:
+    message: str
+
     def __init__(self, driver):
         self.driver = driver
         self.message = self.driver.find_element(By.CSS_SELECTOR, "p:nth-child(1)").text
