@@ -59,4 +59,4 @@ _Example_: HTTP POST request
 * [Requests: HTTP for Humans](https://requests.readthedocs.io/en/latest/)
 * [GET and POST requests using Python](https://www.geeksforgeeks.org/get-post-requests-using-python/)
 
-*Egon Teiniker, 2020-2022, GPL v3.0*
+*Egon Teiniker, 2020-2026, GPL v3.0*
