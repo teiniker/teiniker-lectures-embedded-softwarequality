@@ -47,7 +47,7 @@ This is commonly referred to as just WebDriver.
     
     ```bash
     $ code ~/.bashrc
-    [i]
+
     export WEBDRIVER=/home/student/local/webdriver/
     export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$M2_HOME/bin:$COVERAGE/bin:/opt/bin:$WEBDRIVER/:$PATH
     ```

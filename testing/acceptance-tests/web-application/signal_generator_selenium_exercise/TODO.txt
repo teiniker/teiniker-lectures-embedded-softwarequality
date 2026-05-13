@@ -42,8 +42,8 @@ C) WebDriver Tests
 Generate Python source code and refactor the code into a test class
 stored in "signal_generator_test.py":
     SignalGeneratorTest(unittest.TestCase)
-        setUp()
-        tearDown()
+        setup_method()
+        teardown_method()
         test_happy_path()
         test_invalid_amplitude()
         test_invalid_offset()
