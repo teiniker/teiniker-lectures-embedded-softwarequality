@@ -60,5 +60,6 @@ def operation(data):
 
 ## References
 
+* [OWASP Cheat Sheet: Input Validation](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html)
 
 *Egon Teiniker, 2020-2026, GPL v3.0*
