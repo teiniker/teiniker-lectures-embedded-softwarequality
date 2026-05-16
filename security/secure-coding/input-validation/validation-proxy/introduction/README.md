@@ -1,6 +1,6 @@
-# Validation Proxy Pattern 
+# Validation Proxy
 
-The Validation Proxy pattern is a design pattern used in secure software 
+The Validation Proxy is a design pattern used in secure software 
 development, particularly in scenarios where **input validation** or certain 
 **precondition checks** are necessary before the execution of a method or 
 access to an object.
