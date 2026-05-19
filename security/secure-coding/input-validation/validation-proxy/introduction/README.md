@@ -32,6 +32,7 @@ of the application.
 Introducing a proxy layer can add overhead to method calls and might lead to 
 overcomplicate the design.
 
+
 ## References
 * Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides ("Gang of Four").
   **Design Patterns: Elements of Reusable Object-Oriented Software**.
