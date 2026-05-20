@@ -1,8 +1,6 @@
 import logging
-import pytest
 
 LOG = logging.getLogger(__name__)
-
 
 def test_debug(caplog):
     with caplog.at_level(logging.DEBUG):
