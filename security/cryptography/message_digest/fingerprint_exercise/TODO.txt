@@ -13,5 +13,5 @@ C) from_file(self, filename)
    Calculate a SHA-256 hash value from a given file with the name
    "filename" read from the filesystem.
    
-   Compare your fingerprint with the output of the command line tool:
-       $ sha256sum tux.jpeg
+Compare your fingerprint with the output of the command line tool:
+$ sha256sum tux.jpeg
