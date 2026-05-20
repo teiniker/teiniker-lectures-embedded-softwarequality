@@ -17,12 +17,5 @@ def test_verify(encryption):
 
 
 def test_bruteforce(encryption):
-    hash_value = "04e77bf8f95cb3e1a36a59d1e93857c411930db646b46c218a0352e432023cf2"
-    with open("wordlist.txt", encoding="utf-8") as file:
-        lines = file.read().splitlines()
-        found = None
-        for line in lines:
-            if encryption.encrypt(line) == hash_value:
-                found = line
-                break
-    assert found == "princess"
+    # TODO
+    pass
