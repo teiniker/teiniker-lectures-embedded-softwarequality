@@ -17,5 +17,5 @@ The class should provide (at least) the following methods:
     Use the salt, the plaintext_password, and the iteration count to encrypt the password
     Compare the encrypted password with the given encrypted_password
 
-Use the "PasswordEncryptionTest" class to verify your implementations.
+Use the "test_password_iterations.py" to verify your implementations.
 
