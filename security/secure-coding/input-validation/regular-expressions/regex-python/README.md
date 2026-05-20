@@ -7,12 +7,19 @@ based on specific patterns. Instead of writing complex loops and
 conditional statements to find a piece of text, you define a pattern 
 string using a special syntax.
 
-Regular expressions (regex) can look like a cat walked across your keyboard, but they are incredibly powerful tools for pattern matching and text manipulation.
+Regular expressions (regex) can look like a cat walked across our 
+keyboard, but they are incredibly powerful tools for pattern matching 
+and text manipulation.
 
-In Python, the re module is your gateway to using regex. Here is a breakdown of how the module works in general, followed by a deep dive into your specific email-checking example.
+In Python, the re module is our gateway to using regex. Here is 
+a breakdown of how the module works in general, followed by a 
+deep dive into our specific email-checking example.
 
 The Python re Module (In General)
-The re module allows you to search for, match, and modify strings based on specific patterns. Instead of writing complex loops and conditional statements to find a piece of text, you define a pattern string using a special syntax.
+The re module allows you to search for, match, and modify strings 
+based on specific patterns. Instead of writing complex loops and 
+conditional statements to find a piece of text, you define a 
+pattern string using a special syntax.
 
 Common Functions in `re`:
 
@@ -73,7 +80,8 @@ def test_invalid_email():
         It considers characters "compatible" if they mean the same thing, 
         even if they look quite different.
 
-    For security-based input validation, NFKC (Normalization Form Compatibility Composition) is generally the best choice.
+    For security-based input validation, NFKC (Normalization Form 
+    Compatibility Composition) is generally the best choice.
 
     In security, our primary goal is to eliminate ambiguity. Hackers love 
     to exploit "visual equivalence" using lookalike characters to trick 
