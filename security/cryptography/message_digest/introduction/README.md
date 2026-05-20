@@ -2,7 +2,7 @@
 
 Message digests compute a **cryptographic hash**, or secure checksum, for a particular message.
 
-![Message Digest](MessageDigest.png)
+![Message Digest](figures/MessageDigest.png)
 
 Depending on the message size and the type of digest being used, the chances of generating the same message digest is extremely small.
 Changing a bit in the input message for which a digest has been computed will lead to an unpredictable 
@@ -79,4 +79,4 @@ SHA256(tux.jpeg)= 44eefdc0d4b5ea8d999d743e2651044f8033585ef3c97b2d69b508ad8c282c
 
 * [openssl](https://www.openssl.org/docs/man1.1.1/man1/openssl.html)
 
-*Egon Teiniker, 2016-2024, GPL v3.0* 
+*Egon Teiniker, 2016-2026, GPL v3.0* 
