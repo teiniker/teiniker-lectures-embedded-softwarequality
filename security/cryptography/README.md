@@ -4,7 +4,6 @@ Cryptography is the basis of sustainable information security.
 The following examples show the most important **cryptographic operations in their applications**.
 
 * Python 
-  * [Python Bytes and Bytearrays]()
   * [Setup Cryptographic Libraries in Python](setup/README.md)
   
 * Encryption of Data at Rest

@@ -5,13 +5,13 @@ The following libraries and tools are used in the Virtual Lab to run the cryptog
 ## pyca/cryptography
 Cryptography  includes both high level recipes and low level interfaces to common cryptographic algorithms such as symmetric ciphers, message digests, and key derivation functions.
 ```
-$ pip3 install cryptography
+$ pip install cryptography
 ```
 
 Note that on Kali Linux an **old version** is already installed.
 In that case, we have to update the library:
 ```
-$ pip3 install cryptography --upgrade
+$ pip install cryptography --upgrade
 Successfully installed cffi-1.14.3 cryptography-3.1.1 pycparser-2.20
 ```
 
@@ -20,7 +20,7 @@ Successfully installed cffi-1.14.3 cryptography-3.1.1 pycparser-2.20
 Good password hashing for your software and your servers
 
 ```
-$ pip3 install bcrypt
+$ pip install bcrypt
 ```
 
 ## PyJWT Library
@@ -28,7 +28,7 @@ $ pip3 install bcrypt
 PyJWT is a Python library which allows you to encode and decode JSON Web Tokens (JWT). JWT is an open, industry-standard (RFC 7519) for representing claims securely between two parties.
 
 ```
-$ pip3 install pyjwt
+$ pip install pyjwt
 ```
 
 
@@ -41,4 +41,4 @@ $ pip3 install pyjwt
 * [PyJWT](https://github.com/jpadilla/pyjwt)
 * [PyJWT Documentation](https://pyjwt.readthedocs.io/en/stable/)
 
-*Egon Teiniker, 2020-2023, GPL v3.0*
+*Egon Teiniker, 2020-2026, GPL v3.0*
