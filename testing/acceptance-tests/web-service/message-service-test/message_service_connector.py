@@ -11,18 +11,18 @@ class MessageService:
     def __init__(self, base_url='http://localhost:8080/messages'):
         self.base_url = base_url
 
-    def find_all(self) -> list:
-        response = requests.get(self.base_url, timeout=5)
-        if response.status_code != 200:
-            raise ServiceError(f'find_all() failed: {response.status_code}')
-        return [self._to_message(m) for m in response.json()['data']]
-
     def find_by_id(self, address: int) -> Message:
         response = requests.get(f'{self.base_url}/{address}', timeout=5)
         if response.status_code != 200:
             raise ServiceError(f'find_by_id({address}) failed: {response.status_code}')
         return self._to_message(response.json())
 
+    def find_all(self) -> list:
+        response = requests.get(self.base_url, timeout=5)
+        if response.status_code != 200:
+            raise ServiceError(f'find_all() failed: {response.status_code}')
+        return [self._to_message(m) for m in response.json()['data']]
+    
     def insert(self, message: Message) -> Message:
         response = requests.post(self.base_url, timeout=5, json=self._to_dict(message))
         if response.status_code != 201:

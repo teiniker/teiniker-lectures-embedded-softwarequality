@@ -22,11 +22,11 @@ def test_fromhex():
     hex_str = 'f9cdb9ec44d8d3c18d41cdf26ae6123c'
     b = bytes.fromhex(hex_str)
     assert isinstance(b, bytes)
-    assert b == b'\xf9\xcd\xb9\xecD\xd8\xd3\xc1\x8dA\xcd\xf2j\xe6\x12<'
+    assert b == b'\xf9\xcd\xb9\xec\xd8\xd3\xc1\x8d\xcd\xf2j\xe6\x12<'
 
 
 def test_to_hex():
-    b = b'\xf9\xcd\xb9\xecD\xd8\xd3\xc1\x8dA\xcd\xf2j\xe6\x12<'
+    b = b'\xf9\xcd\xb9\xec\xd8\xd3\xc1\x8d\xcd\xf2j\xe6\x12<'
     hex_str = b.hex()
     assert isinstance(hex_str, str)
     assert hex_str == 'f9cdb9ec44d8d3c18d41cdf26ae6123c'

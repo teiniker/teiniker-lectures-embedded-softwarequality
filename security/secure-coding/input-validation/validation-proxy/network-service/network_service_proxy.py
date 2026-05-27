@@ -28,13 +28,15 @@ class NetworkServiceProxy(NetworkService):
     Validates all inputs before delegating to the wrapped service.
     Raises ValueError if any input fails validation.
     """
-    _service: NetworkService
+    _service: NetworkService    # ---[1]-> NetworkService 
 
     def __init__(self, service: NetworkService):
         self._service = service
 
     def resolve_hostname(self, hostname: str) -> str:
+        # Pre-Pocessing: Validate hostname format
         _validate_hostname(hostname)
+        # Delegate to the wrapped service
         return self._service.resolve_hostname(hostname)
 
     def connect(self, address: str, port: int) -> None:

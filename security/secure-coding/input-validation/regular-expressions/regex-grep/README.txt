@@ -128,7 +128,7 @@ $ egrep -n "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" InputData.txt
 
 Examples: Whitelisting vs. Blacklisting
 -------------------------------------------------------------------------------
-$ egrep -n "^[<>]" InputData.txt
+$ egrep -n "[<>]" InputData.txt
 38:<script>
 39:<ScRiPt>
 40:<SCRIPT>

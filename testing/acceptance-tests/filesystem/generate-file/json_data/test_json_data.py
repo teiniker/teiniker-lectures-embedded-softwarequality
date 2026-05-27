@@ -6,13 +6,10 @@ FILE_PATH = 'data.json'
 
 @pytest.fixture
 def json_file():
-    # Setup
     data = {'person': {'name': 'John', 'age': 30, 'city': 'Graz'}}
     with open(FILE_PATH, "w", encoding="UTF-8") as write_file:
         json.dump(data, write_file, indent=2)
-    # Exercise
     yield FILE_PATH
-    # Teardown
     os.remove(FILE_PATH)
 
 def test_deserialization_from_file(json_file):

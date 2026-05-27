@@ -11,17 +11,17 @@ class BookService:
     def __init__(self, base_url='http://localhost:8080/books'):
         self.base_url = base_url
 
-    def find_all(self) -> list:
-        response = requests.get(self.base_url, timeout=5)
-        if response.status_code != 200:
-            raise ServiceError(f'find_all failed: {response.status_code}')
-        return [self._to_book(b) for b in response.json()['data']]
-
     def find_by_id(self, oid: int) -> Book:
         response = requests.get(f'{self.base_url}/{oid}', timeout=5)
         if response.status_code != 200:
             raise ServiceError(f'find_by_id({oid}) failed: {response.status_code}')
         return self._to_book(response.json())
+
+    def find_all(self) -> list:
+        response = requests.get(self.base_url, timeout=5)
+        if response.status_code != 200:
+            raise ServiceError(f'find_all failed: {response.status_code}')
+        return [self._to_book(b) for b in response.json()['data']]
 
     def insert(self, book: Book) -> Book:
         response = requests.post(self.base_url, timeout=5, json=self._to_dict(book))
