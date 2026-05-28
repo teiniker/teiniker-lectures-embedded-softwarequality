@@ -9,7 +9,7 @@ def encryption():
 
 def test_encrypt(encryption):
     encrypted_password = encryption.encrypt("trink4bier!")
-    assert type(encrypted_password) is bytes
+    assert isinstance(encrypted_password, bytes)
     assert len(encrypted_password) == 48  # 16 bytes salt + 32 bytes SHA-256 digest
 
 
