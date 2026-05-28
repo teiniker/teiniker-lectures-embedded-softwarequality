@@ -61,6 +61,16 @@ _Example_: see: https://jwt.io/
     HMACSHA256(base64UrlEncode(header) + "." + base64UrlEncode(payload), your-256-bit-secret)
 ```
 
+## Setup 
+
+PyJWT is a Python library which allows you to encode and decode JSON Web Tokens 
+(JWT). JWT is an open, industry-standard (RFC 7519) for representing claims 
+securely between two parties.
+
+```
+$ pip install pyjwt
+```
+
 ## References
 * [RFC 7519 - JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519)
 * [JWT Debugger](https://jwt.io/)
