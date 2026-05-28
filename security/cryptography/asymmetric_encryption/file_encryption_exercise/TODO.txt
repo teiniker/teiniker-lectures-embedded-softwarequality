@@ -24,7 +24,7 @@ B) Client (file_encryptor.py)
     The save() method takes a bytes object, encrypts it and save the ciphertext in 
     a file of the given name.
 
-   Use the "FileEncryptorTest" class to test your implementation.
+   Use the "test_file_encryptor.py" class to test your implementation.
 
 
 C) Server (file_decryptor.py)
@@ -43,4 +43,4 @@ C) Server (file_decryptor.py)
     The load() method reads the encrypted file "secure.data", decrypts it  
     and returns the plaintext.
 
-    Use the "FileDecryptorTest" class to test your implementation.
+    Use the "test_file_decryptor.py" class to test your implementation.
