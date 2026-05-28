@@ -27,7 +27,7 @@ To try out the proxy we go to the directory:
 
 There we start the service:
 ```
-$ python3 article_service.py
+$ python article_service.py
 
 * Serving Flask app 'article_service'
  * Debug mode: on
