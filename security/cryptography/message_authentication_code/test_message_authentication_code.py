@@ -2,9 +2,6 @@ import secrets
 import hmac
 import hashlib
 
-import pytest
-
-
 KEY = bytes.fromhex("fce0ddc9bf4ad0f68d92af77b42b486bd10c27bc1b45a4c4929cda4f63bf0386")
 
 

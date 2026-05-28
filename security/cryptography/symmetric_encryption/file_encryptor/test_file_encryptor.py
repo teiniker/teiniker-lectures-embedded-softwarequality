@@ -4,10 +4,8 @@ from file_encryptor import FileEncryptor
 
 @pytest.fixture
 def encryptor():
-    # key = os.urandom(32)  # 256 bit key
     key = bytes.fromhex('a4f7802bd2b099fdd603abb5cc20a5402719f6d408975017950a021bb2f1ee52')
     print('key: ' + key.hex())
-    # iv = os.urandom(16)  # equal to block size
     iv = bytes.fromhex('f9cdb9ec44d8d3c18d41cdf26ae6123c')
     print(' iv : ' + iv.hex())
     return FileEncryptor(key, iv)
