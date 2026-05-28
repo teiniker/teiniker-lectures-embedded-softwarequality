@@ -97,6 +97,16 @@ pipeline or a hardware pipeline.
 * It allows for **random access** to the encrypted data.
 
 
+## Setup
+
+Cryptography  includes both high level recipes and low level interfaces to 
+common cryptographic algorithms such as symmetric ciphers, message digests, 
+and key derivation functions.
+
+```
+$ pip install cryptography
+```
+
         
         
 ## References
