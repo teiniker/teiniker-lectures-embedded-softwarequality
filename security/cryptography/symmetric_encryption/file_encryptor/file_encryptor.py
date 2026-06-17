@@ -1,8 +1,8 @@
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 
 class FileEncryptor:
-    def __init__(self, key:bytes, iv:bytes)->None:
-        self.cipher = Cipher(algorithms.AES(key), modes.CTR(iv))
+    def __init__(self, key:bytes, nonce:bytes)->None:
+        self.cipher = Cipher(algorithms.AES(key), modes.CTR(nonce))
 
     def load(self, filename:str)->bytes:
         with open(filename, 'rb') as f:

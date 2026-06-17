@@ -7,8 +7,8 @@ import pytest
 @pytest.fixture
 def cipher():
     key = secrets.token_bytes(32)  # 256 bit key
-    iv = secrets.token_bytes(16)   # equal to block size
-    return Cipher(algorithms.AES(key), modes.CTR(iv))
+    nonce = secrets.token_bytes(16)   # equal to block size
+    return Cipher(algorithms.AES(key), modes.CTR(nonce))
 
 
 def test_encryption_and_decryption(cipher):
