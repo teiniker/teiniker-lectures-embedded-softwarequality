@@ -90,10 +90,10 @@ initialization vector (IV) and encrypted with a block cipher.
 The result of this encryption is then XORed with the plaintext to produce the ciphertext. 
 
 Advantages of the GCM mode:
-* Like all counter modes, this is essentially a **stream cipher**, and so it is essential that a different IV is used for 
-each stream that is encrypted.
-* GCM can take full advantage of **parallel processing** and implementing GCM can make efficient use of an instruction 
-pipeline or a hardware pipeline.
+* Like all counter modes, this is essentially a **stream cipher**, and so it is essential 
+  that a different IV is used for each stream that is encrypted.
+* GCM can take full advantage of **parallel processing** and implementing GCM can make 
+  efficient use of an instruction pipeline or a hardware pipeline.
 * It allows for **random access** to the encrypted data.
 
 
