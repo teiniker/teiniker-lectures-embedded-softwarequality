@@ -50,11 +50,11 @@ functions.
 The scrypt function takes several parameters:
 * The **passphrase P** is typically a human-chosen password.
 * The **salt** is normally uniquely and randomly generated [RFC4086].
-* The parameter **r** specifies the block size.
+* The parameter **r** specifies the block size (affects memory usage per iteration, commonly 8).
 * The CPU/Memory cost parameter **N** must be larger than 1,
        a power of 2, and less than 2^(128 * r / 8).
-* The parallelization parameter **p**  is a positive
-      integer less than or equal to ((2^32-1) * 32) / (128 * r).
+* The parallelization parameter **p** (how many independent computations run).
+    Internally, scrypt's expensive step (called SMix) gets run p separate times, each operating on its own independent block of memory of size determined by n and r. So increasing p from 1 to 2 roughly doubles the total computational work, since you're now doing two full passes of the expensive memory-hard mixing instead of one.
 
 Users of scrypt can tune the parameters N, r, and p according to the amount
 of memory and computing power available, the latency-bandwidth product of the
