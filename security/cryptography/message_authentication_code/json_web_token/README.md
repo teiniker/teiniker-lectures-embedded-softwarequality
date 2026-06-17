@@ -74,3 +74,5 @@ $ pip install pyjwt
 ## References
 * [RFC 7519 - JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519)
 * [JWT Debugger](https://jwt.io/)
+
+*Egon Teiniker, 2020-2026, GPL v3.0*
