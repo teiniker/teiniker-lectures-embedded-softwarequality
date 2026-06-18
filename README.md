@@ -23,9 +23,11 @@ The following topics will be covered:
 
 
 4. **Software Security**
+    - [secure-coding](security/secure-coding/)
+    - [cryptography](security/cryptography/)
+    - [reverse-engineering](security/reverse-engineering/cxx/)
 
-
-As a development environment, you can use a pre-configured **Debian 12.7 Linux VM**
+As a development environment, you can use a pre-configured **Debian 13.0 Linux VM**
 image:
 [Virtual Lab](https://drive.google.com/drive/folders/1AzsF4Mvh1HJ8k6OW5W5hQ5CF0HdqA51l)
 
