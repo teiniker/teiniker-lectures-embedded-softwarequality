@@ -15,7 +15,7 @@ By default, **statement coverage** will be measured.
 
 To install coverage.py, we can use the pip command:
 ```
-$ pip3 install coverage
+$ pip install coverage
 ```
 
 ## Command Line Usage
