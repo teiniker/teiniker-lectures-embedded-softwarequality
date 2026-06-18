@@ -21,11 +21,10 @@ The following topics will be covered:
     * [Unit Tests](testing/unit-tests/)
     * [Acceptance Tests](testing/acceptance-tests/)
 
-
 4. **Software Security**
-    - [secure-coding](security/secure-coding/)
-    - [cryptography](security/cryptography/)
-    - [reverse-engineering](security/reverse-engineering/cxx/)
+    - [Secure Coding](security/secure-coding/)
+    - [Cryptography](security/cryptography/)
+    - [Reverse Engineering](security/reverse-engineering/cxx/)
 
 As a development environment, you can use a pre-configured **Debian 13.0 Linux VM**
 image:
