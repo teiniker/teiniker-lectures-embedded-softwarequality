@@ -14,7 +14,10 @@ The following topics will be covered:
     * [Configuration Management](https://github.com/teiniker/teiniker-lectures-python/tree/main/configuration-management)
 
 2. **Software Inspection**
-    * [Introduction](inspection)
+    - [Introduction](inspection)
+    - [Software Metrics](inspection/software-metrics/)
+    - [Type Hints](inspection/type-hints/)
+    - [Static Analysis](inspection/static-analysis/)
 
 3. **Software Testing**
     * [Introduction](testing/README.md)
